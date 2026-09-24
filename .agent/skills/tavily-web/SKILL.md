@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: tavily-web
-description: Web search, content extraction, crawling, and research capabilities using Tavily API
+description: >
+  Use PROACTIVELY for real-time web search and content gathering. Triggers: "tìm web", "tra cứu mạng", "tavily search".
 ---
 
 # tavily-web

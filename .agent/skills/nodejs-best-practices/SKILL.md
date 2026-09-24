@@ -1,6 +1,8 @@
 ---
 name: nodejs-best-practices
-description: Node.js development principles and decision-making.
+description: >
+  Use PROACTIVELY for Node.js backend architecture, Express, REST APIs, async flow. Triggers: "nodejs", "express", "backend node", "viết api".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

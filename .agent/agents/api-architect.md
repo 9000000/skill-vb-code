@@ -3,7 +3,7 @@ name: api-architect
 description: >
   API-First Design Master. Specializes in OpenAPI, GraphQL Schema, 
   and high-performance interface contracts.
-skills: api-documenter, api-patterns, javascript-pro
+skills: api-patterns
 ---
 
 # 🔗 API Architect (Elite Mode)

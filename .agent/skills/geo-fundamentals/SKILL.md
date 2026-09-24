@@ -1,6 +1,8 @@
 ---
 name: geo-fundamentals
-description: Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).
+description: >
+  Use PROACTIVELY for Generative Engine Optimization: ranking on ChatGPT, Perplexity, Claude search. Triggers: "geo", "lên top ai search", "perplexity seo", "chatgpt search".
+
 category: seo
 version: 4.1.0-fractal
 layer: master-skill

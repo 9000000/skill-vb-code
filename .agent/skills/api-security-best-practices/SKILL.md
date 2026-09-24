@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: api-security-best-practices
-description: "Implement secure API design patterns including authentication, authorization, input validation, rate limiting, and protection against common API vulnerabilities"
+description: >
+  Use PROACTIVELY for rate limiting, CORS, input sanitization, API token security. Triggers: "bảo mật api", "rate limit", "cors".
 ---
 
 # API Security Best Practices

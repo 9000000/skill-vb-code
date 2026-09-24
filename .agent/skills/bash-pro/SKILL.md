@@ -1,9 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: bash-pro
-description: Master of defensive Bash scripting for production automation, CI/CD
-  pipelines, and system utilities. Expert in safe, portable, and testable shell
-  scripts.
+description: >
+  Use PROACTIVELY for robust shell scripts, terminal automation, backup scripts. Triggers: "bash", "shell script", "lệnh terminal", "tự động hóa script".
+
 metadata:
   model: sonnet
 ---

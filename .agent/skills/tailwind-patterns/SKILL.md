@@ -1,6 +1,8 @@
 ---
 name: tailwind-patterns
-description: Tailwind CSS v4 principles and modern design tokens.
+description: >
+  Use PROACTIVELY for Tailwind CSS styling, responsive layouts, color tokens, dark mode. Triggers: "tailwind", "css", "style nút", "responsive", "chỉnh màu".
+
 category: design
 version: 4.1.0-fractal
 layer: master-skill

@@ -1,6 +1,8 @@
 ---
 name: lint-and-validate
-description: Automatic quality control, linting, and static analysis procedures.
+description: >
+  Use PROACTIVELY for static code analysis, ESLint, TypeScript typecheck, format errors. Triggers: "lint", "typecheck", "kiểm tra lỗi cú pháp", "validate code".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

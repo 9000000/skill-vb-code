@@ -1,6 +1,8 @@
 ---
 name: seo-expert-kit
-description: Comprehensive SEO Master Skill covering fundamentals, audit, content creation, technical optimization, and scaling.
+description: >
+  Use PROACTIVELY for technical SEO, metadata, sitemaps, OpenGraph, ranking on Google. Triggers: "seo", "lên top google", "tối ưu tìm kiếm", "meta tag", "sitemap".
+
 category: seo
 version: 4.1.0-fractal
 layer: master-skill

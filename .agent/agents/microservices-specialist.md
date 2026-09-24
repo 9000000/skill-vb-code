@@ -3,7 +3,7 @@ name: microservices-specialist
 description: >
   Distributed Systems Master. Designs and orchestrates complex 
   microservice ecosystems.
-skills: architecture, api-patterns, cloud-architect-master
+skills: architecture, api-patterns
 ---
 
 # 🕸️ Microservices Specialist (Elite Mode)

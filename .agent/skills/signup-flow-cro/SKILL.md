@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: signup-flow-cro
-description: When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions "signup conversions," "registration friction," "signup form optimization," "free trial signup," "reduce signup dropoff," or "account creation flow." For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro.
+description: >
+  Use PROACTIVELY for frictionless user onboarding, sign up flows, conversion funnels. Triggers: "luồng đăng ký", "onboarding", "giảm rớt khách".
 ---
 
 # Signup Flow CRO

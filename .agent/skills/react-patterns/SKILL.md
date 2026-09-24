@@ -1,7 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: react-patterns
-description: Modern React patterns and principles. Hooks, composition, performance, TypeScript best practices.
+description: >
+  Use PROACTIVELY for modern React hooks, component composition, state management. Triggers: "react hooks", "custom hook", "viết component react".
+
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 

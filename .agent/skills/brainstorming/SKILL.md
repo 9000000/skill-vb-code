@@ -1,6 +1,8 @@
 ---
 name: brainstorming
-description: Socratic questioning protocol + user communication.
+description: >
+  Use PROACTIVELY for brainstorming creative ideas, problem-solving, feature design. Triggers: "tìm ý tưởng", "brainstorm", "gợi ý tính năng", "ý tưởng mới".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

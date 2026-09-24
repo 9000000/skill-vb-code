@@ -1,6 +1,8 @@
 ---
 name: frontend-trends-2026
-description: Collection of 2026 Frontend Design Formulas (Liquid Glass, Bento, Neo-Brutalism, Eco-Dark).
+description: >
+  Use PROACTIVELY for cutting-edge 2026 aesthetics: liquid glass, bento, neo-brutalism, eco-dark. Triggers: "xu hướng mới", "giao diện 2026", "bento grid", "modern design".
+
 category: ui-ux
 version: 1.0.0
 layer: specialized-skill

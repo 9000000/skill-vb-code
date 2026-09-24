@@ -1,6 +1,8 @@
 ---
 name: antfu-coding-style
-description: Opinionated coding style and tooling preferences by Anthony Fu.
+description: >
+  Use PROACTIVELY for opinionated, lightweight coding style (Anthony Fu style), minimal config. Triggers: "antfu", "style gọn nhẹ".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

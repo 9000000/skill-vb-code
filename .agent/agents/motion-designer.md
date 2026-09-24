@@ -3,7 +3,7 @@ name: motion-designer
 description: >
   UI Motion & Animation Specialist. Experts in Framer Motion, GSAP, 
   and CSS Animations to create "living" interfaces.
-skills: modern-web-architect, javascript-pro
+skills: modern-web-architect
 ---
 
 # ✨ Motion Designer (Elite Mode)

@@ -1,11 +1,11 @@
 {
-  "name": "agent-skills-setup-for-antigravity",
-  "version": "4.3.8",
-  "description": "The Ultimate AI-Powered IDE for 10x Engineers (Full Agentic Workflow)• 573 Master Skills • 2977 AI Patterns • 30 Workflows • 17 Shared Core Libraries. One Command to Rule Them All.",
-  "homepage": "https://agent-skills-setup-for-antigravity.vercel.app",
+  "name": "skill-vb-code",
+  "version": "1.1.0",
+  "description": "The Ultimate Vibe Coding Toolkit for 10x Engineers • 87 Elite Skills • 30 Workflows • Lean, Blazing Fast & Production Ready.",
+  "homepage": "https://github.com/matrix37/skill-vb-code",
   "main": "cli/index.js",
   "bin": {
-    "agent-skills-setup-for-antigravity": "./cli/index.js",
+    "skill-vb-code": "./cli/index.js",
     "antigravity-setup": "./setup.js",
     "antigravity-update": "./update.js"
   },
@@ -16,7 +16,8 @@
     "update.js",
     "README.md",
     "LICENSE",
-    "docs"
+    "docs",
+    "assets"
   ],
   "scripts": {
     "test": "jest",
@@ -66,8 +67,9 @@
     "upstream": "https://github.com/HoangNguyen0403/agent-skills-standard",
     "skills_source": "https://github.com/anthropics/skills"
   },
-  "author": "Dokhacgiakhoa",
+  "author": "matrix37",
   "contributors": [
+    "Dokhacgiakhoa",
     "vudovn (Reference Author)",
     "sickn33 (Reference Author)"
   ],

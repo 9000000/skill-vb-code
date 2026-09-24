@@ -3,7 +3,7 @@ name: data-scientist
 description: >
   Data Analysis & ML Integration Specialist. Transforms raw data into 
   business intelligence and AI features.
-skills: ai-engineer, database-design
+skills: ai-engineer
 ---
 
 # 📊 Data Scientist (Elite Mode)

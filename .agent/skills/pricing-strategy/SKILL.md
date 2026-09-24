@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: pricing-strategy
-description: Design pricing, packaging, and monetization strategies based on value, customer willingness to pay, and growth objectives.
+description: >
+  Use PROACTIVELY for designing SaaS pricing tiers, free trials, paywalls, monetization. Triggers: "đặt giá", "bảng giá", "gói cước", "pricing tier".
 ---
 
 # Pricing Strategy

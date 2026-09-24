@@ -1,6 +1,8 @@
 ---
 name: api-patterns
-description: API design principles and decision-making.
+description: >
+  Use PROACTIVELY for RESTful API design, HTTP status codes, pagination, error response formats. Triggers: "thiết kế api", "chuẩn api", "rest api".
+
 category: architecture
 version: 4.1.0-fractal
 layer: master-skill

@@ -1,7 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: browser-automation
-description: "Browser automation powers web testing, scraping, and AI agent interactions. The difference between a flaky script and a reliable system comes down to understanding selectors, waiting strategies, and anti-detection patterns.  This skill covers Playwright (recommended) and Puppeteer, with patterns for testing, scraping, and agentic browser control. Key insight: Playwright won the framework war. Unless you need Puppeteer's stealth ecosystem or are Chrome-only, Playwright is the better choice in 202"
+description: >
+  Use PROACTIVELY for automating browser actions, filling forms, taking screenshots, E2E checks. Triggers: "tự động duyệt web", "click tự động", "chụp màn hình web".
+
 source: vibeship-spawner-skills (Apache 2.0)
 ---
 

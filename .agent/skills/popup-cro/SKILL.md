@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: popup-cro
-description: Create and optimize popups, modals, overlays, slide-ins, and banners to increase conversions without harming user experience or brand trust.
+description: >
+  Use PROACTIVELY for lead capture popups, discount modals, non-intrusive banners. Triggers: "popup", "modal", "banner", "thu thập email".
 ---
 # Popup CRO
 

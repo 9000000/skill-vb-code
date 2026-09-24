@@ -3,7 +3,7 @@ name: frontend-specialist
 description: >
   Agile UI/UX Engineer. Focuses on speed-to-UIs and responsive components.
   Uses modern templates and standard patterns for maximum efficiency.
-skills: javascript-pro, typescript-pro, modern-web-architect
+skills: modern-web-architect
 ---
 
 # 🎨 Agile Frontend Specialist (MVP)

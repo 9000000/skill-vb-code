@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: marketing-ideas
-description: Provide proven marketing strategies and growth ideas for SaaS and software products, prioritized using a marketing feasibility scoring system.
+description: >
+  Use PROACTIVELY for software marketing tactics, viral loops, launch campaigns. Triggers: "tiếp thị", "marketing", "quảng bá sản phẩm".
 ---
 # Marketing Ideas for SaaS (with Feasibility Scoring)
 

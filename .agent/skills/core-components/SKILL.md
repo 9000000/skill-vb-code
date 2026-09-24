@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: core-components
-description: Core component library and design system patterns. Use when building UI, using design tokens, or working with the component library.
+description: >
+  Use PROACTIVELY when building reusable UI components and design system elements. Triggers: "tạo component", "nút bấm", "modal", "reusable ui".
 ---
 
 # Core Components

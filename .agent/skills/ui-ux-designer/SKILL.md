@@ -1,10 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: ui-ux-designer
-description: Create interface designs, wireframes, and design systems. Masters
-  user research, accessibility standards, and modern design tools. Specializes
-  in design tokens, component libraries, and inclusive design. Use PROACTIVELY
-  for design systems, user flows, or interface optimization.
+description: >
+  Use PROACTIVELY for UI layout, color harmony, typography, visual hierarchy. Triggers: "bố cục", "màu sắc", "font chữ", "thiết kế web", "giao diện".
+
 metadata:
   model: sonnet
 ---

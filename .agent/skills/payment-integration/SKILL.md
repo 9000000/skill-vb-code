@@ -1,9 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: payment-integration
-description: Integrate Stripe, PayPal, and payment processors. Handles checkout
-  flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when
-  implementing payments, billing, or subscription features.
+description: >
+  Use PROACTIVELY for multi-gateway payment handling (PayPal, Stripe, QR Code). Triggers: "cổng thanh toán", "xử lý thanh toán".
+
 metadata:
   model: sonnet
 ---

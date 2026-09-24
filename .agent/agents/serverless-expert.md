@@ -3,7 +3,7 @@ name: serverless-expert
 description: >
   Edge & Lambda Architecture Master. Specializes in highly scalable, 
   event-driven, cost-effective infrastructure.
-skills: cloud-architect-master, deployment-engineer
+skills: clean-code
 ---
 
 # ⚡ Serverless Expert (Elite Mode)

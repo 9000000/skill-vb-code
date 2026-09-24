@@ -1,6 +1,8 @@
 ---
 name: modern-web-performance
-description: High-Performance Web Engineering.
+description: >
+  Use PROACTIVELY for optimizing Core Web Vitals (LCP, FID, CLS), bundle size. Triggers: "tối ưu tốc độ", "web vitals", "giảm dung lượng".
+
 category: performance
 version: 4.1.0-fractal
 layer: master-skill

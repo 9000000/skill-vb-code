@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: github-workflow-automation
-description: "Automate GitHub workflows with AI assistance. Includes PR reviews, issue triage, CI/CD integration, and Git operations. Use when automating GitHub workflows, setting up PR review automation, creating GitHub Actions, or triaging issues."
+description: >
+  Use PROACTIVELY for automating GitHub repository tasks, issue templates, actions. Triggers: "github automation", "tự động github".
 ---
 
 # 🔧 GitHub Workflow Automation

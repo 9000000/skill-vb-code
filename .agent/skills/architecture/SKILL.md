@@ -1,6 +1,8 @@
 ---
 name: architecture
-description: Architectural decision-making framework.
+description: >
+  Use PROACTIVELY for high-level system architecture, component contracts, boundary design. Triggers: "kiến trúc hệ thống", "thiết kế kiến trúc", "system design".
+
 category: architecture
 version: 4.1.0-fractal
 layer: master-skill

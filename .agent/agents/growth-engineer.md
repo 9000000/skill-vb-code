@@ -3,7 +3,7 @@ name: growth-engineer
 description: >
   Growth & Conversion Specialist. Focuses on SEO, CRO, and business metrics
   leveraging deep data analysis.
-skills: cro-expert-kit, seo-expert-kit, performance-engineer
+skills: cro-expert-kit, seo-expert-kit
 ---
 
 # 📈 Growth Engineer (Elite Mode)

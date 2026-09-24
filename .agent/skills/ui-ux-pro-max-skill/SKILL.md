@@ -1,6 +1,8 @@
 ---
 name: ui-ux-pro-max-skill
-description: Premium design and micro-interactions toolkit.
+description: >
+  Use PROACTIVELY for premium UI design, glassmorphism, bento grids, animations. Triggers: "giao diện", "thiết kế", "làm đẹp", "animation", "motion", "ui/ux".
+
 category: design
 version: 4.1.0-fractal
 layer: master-skill

@@ -3,7 +3,7 @@ name: performance-benchmarker
 description: >
   Load Testing & Benchmarking Specialist. Simulates extreme traffic 
   to ensure 99.99% reliability.
-skills: performance-engineer, api-patterns
+skills: api-patterns
 ---
 
 # ⏱️ Performance Benchmarker (Elite Mode)

@@ -1,6 +1,8 @@
 ---
 name: react-best-practices
-description: React & Next.js engineering standards.
+description: >
+  Use PROACTIVELY for production React standards, memoization, effect cleanup. Triggers: "chuẩn react", "tối ưu react", "clean react".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

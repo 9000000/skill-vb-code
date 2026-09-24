@@ -3,7 +3,7 @@ name: i18n-specialist
 description: >
   Internationalization & Localization Master. Handles multi-language, 
   RTL support, and regional formatting.
-skills: i18n-localization, javascript-pro
+skills: clean-code
 ---
 
 # 🌐 i18n Specialist (Elite Mode)

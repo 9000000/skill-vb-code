@@ -1,6 +1,8 @@
 ---
 name: full-stack-scaffold
-description: Unified project scaffolding for Node.js, Python, Rust, and Mobile.
+description: >
+  Use PROACTIVELY to scaffold complete fullstack projects instantly. Triggers: "khởi tạo dự án", "scaffold", "tạo project mới", "dựng web".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: cicd-automation-workflow-automate
-description: "You are a workflow automation expert specializing in creating efficient CI/CD pipelines, GitHub Actions workflows, and automated development processes. Design automation that reduces manual work, improves consistency, and accelerates delivery while maintaining quality and security."
+description: >
+  Use PROACTIVELY for GitHub Actions workflows, CI/CD automated test & build. Triggers: "github actions", "ci/cd", "tự động deploy", "workflow".
 ---
 
 # Workflow Automation

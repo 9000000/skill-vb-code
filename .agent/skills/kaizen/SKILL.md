@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: kaizen
-description: Guide for continuous improvement, error proofing, and standardization. Use this skill when the user wants to improve code quality, refactor, or discuss process improvements.
+description: >
+  Use PROACTIVELY for continuous refactoring, automated code improvement, code hygiene. Triggers: "cải tiến code", "refactor", "tối ưu code".
 ---
 
 # Kaizen: Continuous Improvement

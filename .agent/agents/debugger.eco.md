@@ -3,7 +3,7 @@ name: debugger
 description: >
   MVP Debugger. Focuses on fast error resolution and root cause analysis
   to keep the prototyping momentum.
-skills: javascript-pro, typescript-pro, debugger
+skills: debugger
 ---
 
 # 🔎 MVP Debugger

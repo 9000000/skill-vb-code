@@ -1,4 +1,6 @@
 ---
+description: >
+  Use PROACTIVELY for deep tech comparison, tech stack evaluation, architectural trade-offs. Triggers: "nghiên cứu công nghệ", "so sánh thư viện", "chọn tech stack".
 version: 4.1.0-fractal
 domain: Strategy & Wisdom
 dna_ref: .shared/ai-master/RESEARCH_PROTOCOL.md

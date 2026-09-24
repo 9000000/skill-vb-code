@@ -1,6 +1,8 @@
 ---
 name: ai-engineer
-description: Principal AI Architect and Machine Learning Engineer.
+description: >
+  Use PROACTIVELY for architecting AI agents, tool calling, model selection, latency tuning. Triggers: "kỹ sư ai", "ai agent", "tool calling".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

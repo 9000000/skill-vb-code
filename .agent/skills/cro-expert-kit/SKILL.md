@@ -1,6 +1,8 @@
 ---
 name: cro-expert-kit
-description: Elite Conversion Rate Optimization Toolkit.
+description: >
+  Use PROACTIVELY for Conversion Rate Optimization: CTA buttons, hero sections, trust signals. Triggers: "tăng chuyển đổi", "cro", "tối ưu bán hàng", "cta".
+
 category: marketing
 version: 4.1.0-fractal
 layer: master-skill

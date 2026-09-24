@@ -1,6 +1,8 @@
 ---
 name: tdd-master-workflow
-description: Comprehensive Test-Driven Development (TDD) cycle.
+description: >
+  Use PROACTIVELY for Test-Driven Development (Red-Green-Refactor) and automated testing. Triggers: "viết test", "tdd", "kiểm thử tự động", "chạy test".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

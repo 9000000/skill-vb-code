@@ -1,6 +1,8 @@
 ---
 name: web-design-guidelines
-description: Review UI code for Web Interface Guidelines compliance.
+description: >
+  Use PROACTIVELY for web interface guidelines, accessibility (a11y), clean layout. Triggers: "chuẩn thiết kế", "accessibility", "a11y", "tiêu chuẩn web".
+
 category: design
 version: 4.1.0-fractal
 layer: master-skill

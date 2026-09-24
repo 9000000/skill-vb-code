@@ -1,6 +1,8 @@
 ---
 name: server-management
-description: Server management principles and decision-making.
+description: >
+  Use PROACTIVELY for Linux server setup, Nginx, PM2, systemd, environment variables. Triggers: "quản lý server", "vps", "cài nginx", "pm2".
+
 category: infrastructure
 version: 4.1.0-fractal
 layer: master-skill

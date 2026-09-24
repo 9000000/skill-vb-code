@@ -1,10 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: mobile-developer
-description: Develop React Native, Flutter, or native mobile apps with modern
-  architecture patterns. Masters cross-platform development, native
-  integrations, offline sync, and app store optimization. Use PROACTIVELY for
-  mobile features, cross-platform code, or app optimization.
+description: >
+  Use PROACTIVELY for implementing mobile features, push notifications, device permissions. Triggers: "tính năng mobile", "lập trình di động".
+
 metadata:
   model: inherit
 ---

@@ -1,6 +1,8 @@
 ---
 name: react-native-best-practices
-description: React Native & Expo engineering standards.
+description: >
+  Use PROACTIVELY for React Native performance, smooth animations, offline state. Triggers: "tối ưu react native", "expo mobile".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

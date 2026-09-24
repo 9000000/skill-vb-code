@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: react-ui-patterns
-description: Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or managing UI states.
+description: >
+  Use PROACTIVELY for React loading skeletons, error boundaries, async data UX. Triggers: "skeleton loading", "xử lý async", "giao diện chờ".
 ---
 
 # React UI Patterns

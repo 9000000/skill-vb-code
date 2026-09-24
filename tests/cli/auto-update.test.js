@@ -36,7 +36,7 @@ describe('checkAndApplyUpdates', () => {
       update: { latest: '3.6.0', current: '3.5.0', type: 'minor' }
     });
 
-    await checkAndApplyUpdates({}, {
+    await checkAndApplyUpdates({ name: 'skill-vb-code' }, {
       updateNotifier: mockUpdateNotifier,
       prompts: mockPrompts,
       execSync: mockExecSync,
@@ -46,7 +46,7 @@ describe('checkAndApplyUpdates', () => {
     // Should NOT prompt
     expect(mockPrompts).not.toHaveBeenCalled();
     // Should install immediately
-    expect(mockExecSync).toHaveBeenCalledWith('npm install -g agent-skills-setup-for-antigravity@latest', expect.anything());
+    expect(mockExecSync).toHaveBeenCalledWith('npm install -g skill-vb-code@latest', expect.anything());
     expect(mockExit).toHaveBeenCalledWith(0);
   });
 });

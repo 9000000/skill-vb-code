@@ -1,6 +1,8 @@
 ---
 name: modern-web-architect
-description: Master Frontend & Web Architecture.
+description: >
+  Use PROACTIVELY for web architecture, component hierarchy, client vs server split. Triggers: "kiến trúc web", "cấu trúc dự án", "web architecture".
+
 category: architecture
 version: 4.1.0-fractal
 layer: master-skill

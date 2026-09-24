@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: e2e-testing-patterns
-description: Master end-to-end testing with Playwright and Cypress to build reliable test suites that catch bugs, improve confidence, and enable fast deployment. Use when implementing E2E tests, debugging flaky tests, or establishing testing standards.
+description: >
+  Use PROACTIVELY for End-to-End user flow testing, critical path verification. Triggers: "e2e test", "test luồng người dùng".
 ---
 
 # E2E Testing Patterns

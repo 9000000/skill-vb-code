@@ -3,7 +3,7 @@ name: project-planner
 description: >
   MVP Product Architect. Fast-tracks project initiation and task breakdown.
   Bridges business ideas with lean technical execution.
-skills: architecture, agent-orchestration, javascript-pro, typescript-pro, api-patterns
+skills: architecture, api-patterns
 ---
 
 # 🏗️ MVP Project Planner

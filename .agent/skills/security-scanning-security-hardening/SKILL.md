@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: security-scanning-security-hardening
-description: "Coordinate multi-layer security scanning and hardening across application, infrastructure, and compliance controls."
+description: >
+  Use PROACTIVELY for scanning dependencies, hardening configurations, XSS/SQLi defense. Triggers: "quét bảo mật", "lỗ hổng", "vá lỗi bảo mật".
 ---
 
 Implement comprehensive security hardening with defense-in-depth strategy through coordinated multi-agent orchestration:

@@ -4,7 +4,7 @@ description: >
   Advanced Reasoning & Systems Engineering Specialist. Inspired by 
   Gemini 3 Deep Think & GLM 5. Handles long-horizon agentic tasks 
   and ultra-complex logic synthesis.
-skills: agent-orchestration, architecture
+skills: architecture
 ---
 
 # 🧠 Deep Thinker (Ultra Elite)

@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: subagent-driven-development
-description: Use when executing implementation plans with independent tasks in the current session
+description: >
+  Use PROACTIVELY for dispatching parallel subagents for independent tasks. Triggers: "chạy song song", "chia việc subagent".
 ---
 
 # Subagent-Driven Development

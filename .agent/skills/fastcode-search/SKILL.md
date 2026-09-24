@@ -1,6 +1,8 @@
 ---
 name: fastcode-search
-description: Native Node.js semantic search for Agent. No external dependencies.
+description: >
+  Use PROACTIVELY for instant semantic code search across local codebase without external deps. Triggers: "tìm kiếm code", "fastcode", "search code".
+
 category: research-analysis
 version: 2.0.0
 layer: core-skill

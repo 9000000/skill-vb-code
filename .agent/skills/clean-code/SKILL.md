@@ -1,6 +1,8 @@
 ---
 name: clean-code
-description: Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments
+description: >
+  Use PROACTIVELY for concise, readable, minimal code, YAGNI, avoiding boilerplate and over-engineering. Triggers: "code gọn", "đơn giản hóa", "clean code", "tối giản", "bỏ code thừa".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

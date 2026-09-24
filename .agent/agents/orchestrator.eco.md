@@ -5,7 +5,7 @@ description: >
   Coordinates all aspects of an MVP (Frontend, Backend, Database, Debugging)
   without needing to heavy specialist agents. Perfect for solo-ninjas and rapid prototyping.
 tools: Read, Grep, Glob, Bash, Write, Edit, Agent
-skills: architecture, agent-orchestration, javascript-pro, typescript-pro, modern-web-architect, api-patterns, database-design, debugger, powershell-windows
+skills: architecture, modern-web-architect, api-patterns, debugger
 ---
 
 # 🚀 Orchestrator (MVP Mode - Multi-tasker)

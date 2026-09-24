@@ -1,6 +1,8 @@
 ---
 name: filesystem-mcp
-description: Official Filesystem Model Context Protocol Server for local file operations.
+description: >
+  Use PROACTIVELY for local file management via MCP protocol. Triggers: "filesystem mcp", "thao tác tệp".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

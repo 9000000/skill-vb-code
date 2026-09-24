@@ -1,7 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: docker-expert
-description: Docker containerization expert with deep knowledge of multi-stage builds, image optimization, container security, Docker Compose orchestration, and production deployment patterns. Use PROACTIVELY for Dockerfile optimization, container issues, image size problems, security hardening, networking, and orchestration challenges.
+description: >
+  Use PROACTIVELY for Dockerfiles, multi-stage builds, docker-compose, containerization. Triggers: "docker", "dockerfile", "docker-compose", "container", "đóng gói server".
+
 category: devops
 color: blue
 displayName: Docker Expert

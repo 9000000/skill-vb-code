@@ -1,6 +1,8 @@
 ---
 name: python-patterns
-description: Python development principles and decision-making.
+description: >
+  Use PROACTIVELY for modern idiomatic Python 3, typing, decorators, generators. Triggers: "python", "code python", "hàm python".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: writing-plans
-description: Use when you have a spec or requirements for a multi-step task, before touching code
+description: >
+  Use PROACTIVELY for breaking complex requirements into clear, phased, atomic implementation plans. Triggers: "lập kế hoạch", "kế hoạch thực hiện", "chia nhỏ task", "plan".
 ---
 
 # Writing Plans

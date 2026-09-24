@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: postgresql
-description: Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing, constraints, performance patterns, and advanced features
+description: >
+  Use PROACTIVELY for advanced PostgreSQL queries, performance analysis, constraints. Triggers: "câu lệnh sql", "tối ưu query", "postgresql".
 ---
 
 # PostgreSQL Table Design 

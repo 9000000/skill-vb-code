@@ -1,6 +1,8 @@
 ---
 name: nextjs-react-expert
-description: React and Next.js performance optimization from Vercel Engineering.
+description: >
+  Use PROACTIVELY for Vercel-grade Next.js and React performance optimization. Triggers: "tối ưu nextjs", "tăng tốc react", "performance".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

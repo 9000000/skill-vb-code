@@ -18,7 +18,7 @@ const { checkAndApplyUpdates } = require('./lib/auto-update');
     }
 
     program
-      .name('agent-skills-setup-for-antigravity')
+      .name(packageJson.name)
       .description('The Unified AI Engineering Tool: Create, Update, Repair, and Fix projects')
       .version(packageJson.version)
       .argument('[project-name]', 'Name of the project (if exists, will Repair/Update)', '.')

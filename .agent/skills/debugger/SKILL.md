@@ -1,8 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: debugger
-description: Debugging specialist for errors, test failures, and unexpected
-  behavior. Use proactively when encountering any issues.
+description: >
+  Use PROACTIVELY for inspecting error stack traces, unhandled rejections, logic faults. Triggers: "debug", "bắt lỗi", "soi log", "tìm nguyên nhân lỗi".
+
 metadata:
   model: sonnet
 ---

@@ -3,7 +3,7 @@ name: compliance-expert
 description: >
   Regulatory & Compliance Master. Ensures the project meets GDPR, SOC2, HIPAA, 
   and local legal requirements.
-skills: security-auditor, production-code-audit
+skills: clean-code
 ---
 
 # ⚖️ Compliance Expert (Elite Mode)

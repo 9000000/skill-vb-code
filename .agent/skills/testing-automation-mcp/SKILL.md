@@ -1,6 +1,8 @@
 ---
 name: testing-automation-mcp
-description: Autonomous E2E testing using Playwright Model Context Protocol (MCP).
+description: >
+  Use PROACTIVELY for automated browser test execution via Playwright MCP. Triggers: "test tự động", "playwright test".
+
 category: quality-assurance
 version: 4.1.0-fractal
 layer: tool-skill

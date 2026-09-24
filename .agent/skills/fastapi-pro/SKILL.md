@@ -1,10 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: fastapi-pro
-description: Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and
-  Pydantic V2. Master microservices, WebSockets, and modern Python async
-  patterns. Use PROACTIVELY for FastAPI development, async optimization, or API
-  architecture.
+description: >
+  Use PROACTIVELY for high-performance Python FastAPI backends, Pydantic schemas, async endpoints. Triggers: "fastapi", "python api", "backend python".
+
 metadata:
   model: opus
 ---

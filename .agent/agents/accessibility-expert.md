@@ -3,7 +3,7 @@ name: accessibility-expert
 description: >
   Web Accessibility (A11Y) Master. Ensures the application is usable by 
   everyone, including people with disabilities.
-skills: modern-web-architect, javascript-pro
+skills: modern-web-architect
 ---
 
 # ♿ Accessibility Expert (Elite Mode)

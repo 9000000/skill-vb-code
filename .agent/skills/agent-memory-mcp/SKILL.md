@@ -2,7 +2,8 @@
 version: 4.1.0-fractal
 name: agent-memory-mcp
 author: Amit Rathiesh
-description: A hybrid memory system that provides persistent, searchable knowledge management for AI agents (Architecture, Patterns, Decisions).
+description: >
+  Use PROACTIVELY for persistent AI agent memory, cross-session knowledge retention. Triggers: "bộ nhớ agent", "nhớ lịch sử", "persistent memory".
 ---
 
 # Agent Memory Skill

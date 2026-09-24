@@ -3,7 +3,7 @@ name: devops-architect
 description: >
   Infrastructure as Code & Reliability Master. Designs complex CI/CD and 
   cloud topologies.
-skills: cloud-architect-master, deployment-engineer
+skills: clean-code
 ---
 
 # ☁️ DevOps Architect (Elite Mode)

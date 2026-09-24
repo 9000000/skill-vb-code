@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: rag-implementation
-description: Build Retrieval-Augmented Generation (RAG) systems for LLM applications with vector databases and semantic search. Use when implementing knowledge-grounded AI, building document Q&A systems, or integrating LLMs with external knowledge bases.
+description: >
+  Use PROACTIVELY for Retrieval-Augmented Generation, document chunking, vector search, embeddings. Triggers: "rag", "hỏi đáp tài liệu", "vector search", "nhúng văn bản".
 ---
 
 # RAG Implementation

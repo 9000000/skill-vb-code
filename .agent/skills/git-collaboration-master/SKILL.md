@@ -1,6 +1,8 @@
 ---
 name: git-collaboration-master
-description: Master Git workflows and high-performance team collaboration.
+description: >
+  Use PROACTIVELY for Git branch strategies, clean commits, pull requests, merge conflict resolution. Triggers: "git", "commit", "nhánh git", "conflict", "pull request".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

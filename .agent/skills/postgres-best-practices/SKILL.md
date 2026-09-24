@@ -1,6 +1,8 @@
 ---
 name: postgres-best-practices
-description: PostgreSQL and Supabase optimization guide.
+description: >
+  Use PROACTIVELY for PostgreSQL schema design, indexing, foreign keys, Supabase DB. Triggers: "postgres", "cơ sở dữ liệu", "bảng postgres", "tạo bảng", "sql".
+
 category: development
 version: 4.1.0-fractal
 layer: master-skill

@@ -3,7 +3,7 @@ name: legacy-modernizer
 description: >
   Refactoring & Migration Specialist. Safely transforms legacy technical debt 
   into modern architecture.
-skills: legacy-modernizer, architecture
+skills: architecture
 ---
 
 # 🛠️ Legacy Modernizer (Elite Mode)

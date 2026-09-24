@@ -81,9 +81,23 @@ Mọi file trong hệ thống phải tuân thủ cấu trúc liên kết:
 
 ## ⚡ 4. SKILL INVOCATION PROTOCOL
 
-- **Manual Invocation**: Thông qua các lệnh `/` (Ví dụ: `/ui-ux-pro-max`).
-- **Contextual Invocation**: Tự động nhận diện Domain dựa trên Metadata Header của file đang sửa.
-- **Orchestration**: Orchestrator đóng vai trò "Điều phối viên" điều động nhân sự dựa trên `skill_ref` của từng Agent.
+- **🗣️ Natural Chat Invocation (Ưu tiên số 1 - Tự động nhận diện ý định)**:
+  Agent PHẢI chủ động nhận diện ý định tự nhiên của người dùng khi chat (cả Tiếng Việt & Tiếng Anh). Tuyệt đối KHÔNG bắt người dùng phải gõ lệnh slash `/`.
+  * Ý định Giao diện/Màu sắc/Animation/Responsive ➔ Tự nạp `ui-ux-pro-max-skill`, `tailwind-patterns`, `frontend-trends-2026`.
+  * Ý định Tối giản/Làm nhanh/YAGNI/Tránh over-engineering ➔ Tự nạp `ponytail`, `clean-code`.
+  * Ý định Báo lỗi/Crash/Bug/Không chạy được ➔ Tự nạp `systematic-debugging`, `debugger`.
+  * Ý định Database/Postgres/Supabase/Prisma ➔ Tự nạp `postgres-best-practices`, `prisma-expert`, `neon-postgres`.
+  * Ý định Auth/Đăng nhập/Clerk ➔ Tự nạp `clerk-auth`.
+  * Ý định Thanh toán/Stripe/SaaS ➔ Tự nạp `stripe-integration`, `micro-saas-launcher`.
+  * Ý định Deploy/Vercel/Hosting ➔ Tự nạp `vercel-deployment`.
+  * Ý định Mobile/Flutter/React Native ➔ Tự nạp `flutter-expert`, `react-native-architecture`.
+  * Ý định Docker/Container/VPS ➔ Tự nạp `docker-expert`.
+  * Ý định AI/Prompt/RAG/LLM ➔ Tự nạp `prompt-engineering`, `rag-implementation`.
+  * Ý định Cào web/Duyệt web ➔ Tự nạp `firecrawl-scraper`, `browser-automation`, `tavily-web`.
+
+- **Manual Invocation**: Thông qua các lệnh `/` khi người dùng chủ động gõ (Ví dụ: `/ui-ux-pro-max`, `/debug`).
+- **Contextual Invocation**: Tự động nhận diện Domain dựa trên loại file và Metadata Header đang sửa.
+- **Orchestration**: Orchestrator điều phối nhân sự và skill chuyên gia phù hợp với task.
 
 ---
 

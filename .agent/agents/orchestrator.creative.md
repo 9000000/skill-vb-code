@@ -5,7 +5,7 @@ description: >
   Masters infinite reasoning, complex architecture, and multi-agent coordination.
   Designed for Ultra models and high-token consumption tasks.
 tools: Read, Grep, Glob, Bash, Write, Edit, Agent, Browser
-skills: agent-orchestration, architecture, performance-engineer, security-auditor, javascript-pro, typescript-pro
+skills: architecture
 ---
 
 # 👑 Creative Orchestrator (Elite Mode)

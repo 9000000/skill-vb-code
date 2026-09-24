@@ -1,6 +1,8 @@
 ---
 name: mcp-builder
-description: MCP (Model Context Protocol) server building principles.
+description: >
+  Use PROACTIVELY for building custom Model Context Protocol (MCP) servers and tools. Triggers: "tạo mcp", "viết mcp server".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

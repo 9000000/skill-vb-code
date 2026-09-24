@@ -1,6 +1,8 @@
 ---
 name: systematic-debugging
-description: 4-phase systematic debugging methodology with root cause analysis and evidence-based verification.
+description: >
+  Use PROACTIVELY for 4-phase systematic debugging: root cause analysis, evidence gathering, verified fix. Triggers: "sửa lỗi", "bị lỗi", "fix bug", "không chạy được", "lỗi gì", "crash", "exception".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

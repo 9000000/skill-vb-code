@@ -1,6 +1,8 @@
 ---
 name: mobile-design
-description: Mobile-first design thinking and decision-making for iOS and Android apps.
+description: >
+  Use PROACTIVELY for mobile-first UI/UX, touch targets, gestures, bottom sheets. Triggers: "giao diện mobile", "thiết kế app", "mobile-first".
+
 category: design
 version: 4.1.0-fractal
 layer: master-skill

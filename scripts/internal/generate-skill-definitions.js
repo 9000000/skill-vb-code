@@ -16,7 +16,7 @@ const categoryKeywords = {
     testing: ['test', 'tdd', 'playwright', 'cypress', 'selenium', 'puppeteer', 'jest', 'vitest', 'e2e', 'qa', 'quality', 'debugging', 'debugger'],
     uiux: ['ui', 'ux', 'design', 'css', 'tailwind', 'animation', 'style', 'theme', 'accessibility', 'wcag', 'canvas', 'svg', 'd3', 'icon', 'color', 'font', 'layout', 'responsive', 'frontend'],
     growth: ['seo', 'analytics', 'marketing', 'growth', 'copy', 'content', 'social', 'email', 'conversion', 'cro', 'pricing', 'sales', 'business', 'startup', 'product', 'advertising', 'ads'],
-    webdev: ['web', 'react', 'next', 'vue', 'angular', 'svelte', 'html', 'javascript', 'typescript', 'node', 'express', 'nestjs', 'api', 'graphql', 'rest', 'backend', 'full-stack', 'frontend', 'wasm', 'pwa', 'remix', 'shopify', 'wordpress', 'django', 'flask', 'fastapi', 'php', 'ruby', 'rails', 'go-', 'rust', 'java', 'c-', 'cpp'],
+    webdev: ['web', 'react', 'next', 'vue', 'angular', 'svelte', 'html', 'javascript', 'typescript', 'node', 'express', 'nestjs', 'api', 'graphql', 'rest', 'backend', 'full-stack', 'frontend', 'wasm', 'pwa', 'remix', 'shopify', 'wordpress', 'django', 'flask', 'fastapi', 'php', 'ruby', 'rails', 'go-', 'rust', 'java', 'c-', 'cpp', 'ponytail', 'clean-code', 'kaizen'],
     research: ['research', 'analysis', 'strategy', 'brainstorm', 'plan', 'document', 'architecture', 'diagram', 'uml', 'c4', 'review', 'audit'],
     // Maker matches everything else useful for building
     maker: ['tool', 'automation', 'productivity', 'notion', 'obsidian', 'workflow', 'script', 'bot', 'scraper', 'data', 'excel', 'csv', 'pdf', 'video', 'image', 'audio', 'file', 'mcp']

@@ -3,7 +3,7 @@ name: backend-specialist
 description: >
   MVP Systems Engineer. Builds robust APIs and simple database schemas 
   to get the engine running.
-skills: javascript-pro, typescript-pro, api-patterns, database-design
+skills: api-patterns
 ---
 
 # ⚙️ MVP Backend Specialist

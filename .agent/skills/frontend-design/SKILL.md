@@ -1,6 +1,8 @@
 ---
 name: frontend-design
-description: Design thinking and decision-making for web UI.
+description: >
+  Use PROACTIVELY for user-centric frontend design decisions and interface architecture. Triggers: "thiết kế frontend", "giao diện người dùng", "user experience".
+
 category: design
 version: 4.1.0-fractal
 layer: master-skill

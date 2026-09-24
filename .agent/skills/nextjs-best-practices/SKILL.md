@@ -1,7 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: nextjs-best-practices
-description: Next.js App Router principles. Server Components, data fetching, routing patterns.
+description: >
+  Use PROACTIVELY for Next.js App Router, Server Components, SSR, data fetching. Triggers: "nextjs", "app router", "server component", "ssr".
+
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 

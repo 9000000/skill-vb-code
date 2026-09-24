@@ -1,7 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: clerk-auth
-description: "Expert patterns for Clerk auth implementation, middleware, organizations, webhooks, and user sync Use when: adding authentication, clerk auth, user authentication, sign in, sign up."
+description: >
+  Use PROACTIVELY for complete user authentication with Clerk: sign-in, user profile, protected routes. Triggers: "clerk", "đăng nhập clerk", "auth", "phân quyền user".
+
 source: vibeship-spawner-skills (Apache 2.0)
 ---
 

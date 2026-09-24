@@ -1,7 +1,9 @@
 ---
 version: 4.1.0-fractal
 name: neon-postgres
-description: "Expert patterns for Neon serverless Postgres, branching, connection pooling, and Prisma/Drizzle integration Use when: neon database, serverless postgres, database branching, neon postgres, postgres serverless."
+description: >
+  Use PROACTIVELY for serverless Neon PostgreSQL, connection pooling, branch databases. Triggers: "neon", "serverless postgres", "neon db".
+
 source: vibeship-spawner-skills (Apache 2.0)
 ---
 

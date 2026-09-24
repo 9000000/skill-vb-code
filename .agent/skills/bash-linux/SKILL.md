@@ -1,6 +1,8 @@
 ---
 name: bash-linux
-description: Bash/Linux terminal patterns and critical commands.
+description: >
+  Use PROACTIVELY for Linux command line, piping, file search, shell operators. Triggers: "lệnh linux", "terminal linux", "grep", "find".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

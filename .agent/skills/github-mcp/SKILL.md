@@ -1,6 +1,8 @@
 ---
 name: github-mcp
-description: Official GitHub Model Context Protocol Server for repository management.
+description: >
+  Use PROACTIVELY for GitHub repository management via MCP: issues, PRs, file contents. Triggers: "github mcp", "tạo issue", "quản lý repo".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill

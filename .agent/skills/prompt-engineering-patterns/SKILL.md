@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: prompt-engineering-patterns
-description: Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability in production. Use when optimizing prompts, improving LLM outputs, or designing production prompt templates.
+description: >
+  Use PROACTIVELY for chain-of-thought, few-shot examples, structured output prompts. Triggers: "prompt nâng cao", "few-shot", "chain of thought".
 ---
 
 # Prompt Engineering Patterns

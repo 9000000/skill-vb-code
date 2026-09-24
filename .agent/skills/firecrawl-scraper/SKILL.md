@@ -1,7 +1,8 @@
 ---
 version: 4.1.0-fractal
 name: firecrawl-scraper
-description: Deep web scraping, screenshots, PDF parsing, and website crawling using Firecrawl API
+description: >
+  Use PROACTIVELY for deep web scraping, crawling websites, extracting clean markdown. Triggers: "cào dữ liệu", "scrape web", "lấy bài viết", "crawl".
 ---
 
 # firecrawl-scraper

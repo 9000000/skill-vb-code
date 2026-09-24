@@ -1,6 +1,8 @@
 ---
 name: puppeteer-mcp
-description: Official Puppeteer Model Context Protocol Server for browser automation.
+description: >
+  Use PROACTIVELY for headless browser control via Puppeteer MCP. Triggers: "puppeteer", "mở trình duyệt ngầm".
+
 category: tools
 version: 4.1.0-fractal
 layer: master-skill
