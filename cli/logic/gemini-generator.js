@@ -73,8 +73,9 @@ This file controls the behavior of your AI Agent.
 - 📱 **Mobile app, Flutter, React Native**: \`flutter-expert\`, \`react-native-architecture\`.
 - 🐳 **Docker, container, Dockerfile**: \`docker-expert\`.
 - 🤖 **Prompts, AI agent, RAG, embeddings**: \`prompt-engineering\`, \`rag-implementation\`.
-- 🌐 **Scraping, crawling, browser automation**: \`firecrawl-scraper\`, \`browser-automation\`, \`tavily-web\`.
-- 🧪 **Testing, TDD, E2E**: \`tdd-master-workflow\`, \`e2e-testing-patterns\`.
+- 🧪 **Testing, TDD, E2E**: \`tdd-master-workflow\`, \`test-driven-development\`, \`e2e-testing-patterns\`.
+- 📋 **Execute plan, task momentum, evidence verification**: \`executing-plans\`, \`subagent-driven-development\`, \`verification-before-completion\`.
+- 🧐 **Code review, review feedback, finish branch, git worktree**: \`requesting-code-review\`, \`receiving-code-review\`, \`finishing-a-development-branch\`, \`using-git-worktrees\`.
 - 📈 **SEO, AI search ranking (ChatGPT/Perplexity)**: \`seo-expert-kit\`, \`geo-fundamentals\`.
 
 ## Core Capabilities
@@ -195,7 +196,9 @@ Tệp này kiểm soát hành vi của AI Agent.
 - 🐳 **Docker, Container, Dockerfile, Docker Compose**: Tự động áp dụng \`docker-expert\`.
 - 🤖 **AI Prompt, Chatbot, RAG, Hỏi đáp tài liệu, LLM**: Tự động áp dụng \`prompt-engineering\`, \`llm-app-patterns\`, \`rag-implementation\`.
 - 🌐 **Cào dữ liệu, Duyệt web, Scrape, Tìm kiếm mạng**: Tự động áp dụng \`firecrawl-scraper\`, \`browser-automation\`, \`tavily-web\`.
-- 🧪 **Kiểm thử, Viết test, TDD, E2E**: Tự động áp dụng \`tdd-master-workflow\`, \`e2e-testing-patterns\`.
+- 🧪 **Kiểm thử, Viết test, TDD, E2E**: Tự động áp dụng \`tdd-master-workflow\`, \`test-driven-development\`, \`e2e-testing-patterns\`.
+- 📋 **Thực thi plan, Kế hoạch, Chạy task, Bằng chứng, Nghiệm thu**: Tự động áp dụng \`executing-plans\`, \`subagent-driven-development\`, \`verification-before-completion\`.
+- 🧐 **Review code, Phản hồi review, Hoàn thành nhánh, Git Worktree**: Tự động áp dụng \`requesting-code-review\`, \`receiving-code-review\`, \`finishing-a-development-branch\`, \`using-git-worktrees\`.
 - 📈 **Lên top Google, SEO, Tìm kiếm AI (ChatGPT, Perplexity)**: Tự động áp dụng \`seo-expert-kit\`, \`geo-fundamentals\`.
 
 ## Khả năng cốt lõi

@@ -301,7 +301,7 @@ async function copySkills(projectPath, categories, engineMode) {
 
     if (!fs.existsSync(skillsSourceDir)) return 0;
 
-    const selectedSkills = getSkillsForCategories(categories);
+    const selectedSkills = getSkillsForCategories(categories, true);
     const uniqueSkills = [...new Set(selectedSkills)]; // Deduplicate to avoid overwrites and double-counting
     let count = 0;
 

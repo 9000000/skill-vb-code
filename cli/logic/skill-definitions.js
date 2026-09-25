@@ -161,17 +161,39 @@ const skillCategories = {
   }
 };
 
-function getSkillsForCategories(categories) {
+const superpowersSkills = [
+  'brainstorming',
+  'diagnosing-superpowers',
+  'dispatching-parallel-agents',
+  'executing-plans',
+  'finishing-a-development-branch',
+  'receiving-code-review',
+  'requesting-code-review',
+  'subagent-driven-development',
+  'systematic-debugging',
+  'test-driven-development',
+  'using-git-worktrees',
+  'using-superpowers',
+  'verification-before-completion',
+  'writing-plans',
+  'writing-skills'
+];
+
+function getSkillsForCategories(categories, includeSuperpowers = false) {
   const skills = [];
   categories.forEach(category => {
     if (skillCategories[category]) {
       skills.push(...skillCategories[category].skills);
     }
   });
-  return skills;
+  if (includeSuperpowers) {
+    skills.push(...superpowersSkills);
+  }
+  return [...new Set(skills)];
 }
 
 module.exports = {
   skillCategories,
+  superpowersSkills,
   getSkillsForCategories
 };

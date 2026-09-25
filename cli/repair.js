@@ -126,7 +126,7 @@ async function repairProject(projectPath, options, config) {
             // Flatten skills list via logic/skill-definitions
             // scaleConfig.coreSkillCategories are CATEGORIES (e.g. ['webdev', 'ai'])
             // We need to map them to actual folder names (e.g. ['modern-web-architect', ...])
-            const skillsToInstall = getSkillsForCategories(skillsToRestoreCategories);
+            const skillsToInstall = getSkillsForCategories(skillsToRestoreCategories, true);
             
             // Deduplicate
             const uniqueSkills = [...new Set(skillsToInstall)];
