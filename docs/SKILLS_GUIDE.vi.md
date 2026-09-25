@@ -132,6 +132,19 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 *   **`cro-expert-kit`**: Tối ưu hóa tỷ lệ chuyển đổi (CRO).
 *   **`ui-ux-pro-max-skill`**: Thiết kế giao diện Visuals Premium.
 
+### 🦸 Bộ Siêu Kỹ Năng Agentic (Superpowers Skills Suite - Jesse Vincent / Obra) *(Mới)*
+*   **`using-superpowers`**: Kích hoạt nguyên tắc vận hành Superpowers, tìm và nạp skill trước mọi phản hồi.
+*   **`executing-plans`**: Thực thi tuần tự kế hoạch (Plan) trực tiếp liên tục, quyết đoán và không ngắt quãng (Inline continuous execution).
+*   **`dispatching-parallel-agents`**: Phân chia các tác vụ độc lập chạy song song với ngữ cảnh cô lập (Isolated context).
+*   **`verification-before-completion`**: Thiết lập kỷ luật thép "Bằng chứng trước khi nghiệm thu" — bắt buộc chạy lệnh verify trực tiếp trước khi báo hoàn thành.
+*   **`test-driven-development`**: Chu trình TDD chuẩn (RED - GREEN - REFACTOR) bắt buộc thấy test fail trước khi viết code.
+*   **`requesting-code-review`**: Tự động điều phối reviewer độc lập kiểm tra spec compliance và code quality trước khi merge.
+*   **`receiving-code-review`**: Tiếp nhận và phản hồi code review với tư duy kỹ thuật khách quan, xác minh trước khi sửa.
+*   **`finishing-a-development-branch`**: Kiểm tra toàn bộ test suite, dọn dẹp và quyết định tích hợp/merge nhánh phát triển.
+*   **`using-git-worktrees`**: Khởi tạo và quản lý không gian làm việc cô lập với Git Worktree hoặc công cụ native.
+*   **`writing-skills`**: Thiết kế, viết và kiểm thử skill mới bằng kỹ thuật TDD cho tài liệu quy trình.
+*   **`diagnosing-superpowers`**: Phân tích lịch sử session, tìm nguyên nhân lỗi, vết sai lệch và lập báo cáo kèm trích dẫn chi tiết.
+
 ---
 
 ## 3. Cách Sử Dụng Hiệu Quả

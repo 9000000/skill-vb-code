@@ -1,7 +1,7 @@
 {
   "name": "skill-vb-code",
   "version": "1.1.0",
-  "description": "The Ultimate Vibe Coding Toolkit for 10x Engineers • 87 Elite Skills • 30 Workflows • Lean, Blazing Fast & Production Ready.",
+  "description": "The Ultimate Vibe Coding Toolkit for 10x Engineers • 104 Elite Skills • 30 Workflows • Lean, Blazing Fast & Production Ready.",
   "homepage": "https://github.com/matrix37/skill-vb-code",
   "main": "cli/index.js",
   "bin": {

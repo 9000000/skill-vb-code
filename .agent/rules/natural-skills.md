@@ -98,6 +98,18 @@ Dưới đây là từ điển ánh xạ giữa văn phong chat tự nhiên củ
 - **Kỹ năng tự động kích hoạt**:
   👉 **`seo-expert-kit`**, **`geo-fundamentals`**
 
+### 📋 M. Thực thi kế hoạch, Bằng chứng nghiệm thu, Chạy song song (Execution & Discipline)
+- **Từ ngữ tự nhiên**:
+  *"thực thi plan", "chạy kế hoạch", "triển khai từng bước", "chứng minh chạy được", "xác minh trước khi xong", "chạy verify", "chạy song song agent", "phân chia agent", "chẩn đoán lỗi agent", "sao chạy lâu thế"*
+- **Kỹ năng tự động kích hoạt**:
+  👉 **`executing-plans`**, **`subagent-driven-development`**, **`verification-before-completion`**, **`dispatching-parallel-agents`**, **`diagnosing-superpowers`**
+
+### 🧐 N. Code Review, Kết thúc nhánh, Không gian cô lập Git Worktree (Review & Branches)
+- **Từ ngữ tự nhiên**:
+  *"review code", "nhờ review", "yêu cầu review", "tiếp nhận phản hồi", "xử lý review", "hoàn thành branch", "kết thúc nhánh", "merge branch", "tạo worktree", "git worktree", "viết skill mới", "tạo skill"*
+- **Kỹ năng tự động kích hoạt**:
+  👉 **`requesting-code-review`**, **`receiving-code-review`**, **`finishing-a-development-branch`**, **`using-git-worktrees`**, **`writing-skills`**, **`using-superpowers`**
+
 ---
 
 ## 🚫 3. NHỮNG ĐIỀU TUYỆT ĐỐI KHÔNG LÀM

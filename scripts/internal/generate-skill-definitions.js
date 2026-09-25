@@ -12,14 +12,14 @@ const categoryKeywords = {
     security: ['security', 'pentest', 'hack', 'malware', 'vulnerability', 'auth', 'compliance', 'red-team', 'forensics', 'exploit', 'owasp', 'scanning', 'threat', 'ssh', 'ssl', 'encryption', 'pci', 'gdpr', 'stride'],
     ai: ['ai-', 'llm', 'agent', 'langgraph', 'langchain', 'prompt', 'rag', 'vector', 'embedding', 'model', 'autogen', 'crewai', 'machine-learning', 'ml-', 'deep-learning', 'vision', 'voice', 'chatbot', 'gpt', 'claude', 'gemini', 'context'],
     mobile: ['mobile', 'android', 'ios', 'flutter', 'react-native', 'expo', 'swift', 'kotlin', 'app-store'],
-    devops: ['devops', 'docker', 'kubernetes', 'k8s', 'terraform', 'aws', 'azure', 'gcp', 'cloud', 'ci/cd', 'pipeline', 'deploy', 'server', 'linux', 'bash', 'shell', 'monitor', 'observability', 'infra', 'terminal', 'powershell', 'bazel', 'turborepo', 'nx', 'git', 'ansible', 'helm', 'prometheus', 'grafana'],
-    testing: ['test', 'tdd', 'playwright', 'cypress', 'selenium', 'puppeteer', 'jest', 'vitest', 'e2e', 'qa', 'quality', 'debugging', 'debugger'],
+    devops: ['devops', 'docker', 'kubernetes', 'k8s', 'terraform', 'aws', 'azure', 'gcp', 'cloud', 'ci/cd', 'pipeline', 'deploy', 'server', 'linux', 'bash', 'shell', 'monitor', 'observability', 'infra', 'terminal', 'powershell', 'bazel', 'turborepo', 'nx', 'git', 'ansible', 'helm', 'prometheus', 'grafana', 'branch'],
+    testing: ['test', 'tdd', 'playwright', 'cypress', 'selenium', 'puppeteer', 'jest', 'vitest', 'e2e', 'qa', 'quality', 'debugging', 'debugger', 'verification'],
     uiux: ['ui', 'ux', 'design', 'css', 'tailwind', 'animation', 'style', 'theme', 'accessibility', 'wcag', 'canvas', 'svg', 'd3', 'icon', 'color', 'font', 'layout', 'responsive', 'frontend'],
     growth: ['seo', 'analytics', 'marketing', 'growth', 'copy', 'content', 'social', 'email', 'conversion', 'cro', 'pricing', 'sales', 'business', 'startup', 'product', 'advertising', 'ads'],
     webdev: ['web', 'react', 'next', 'vue', 'angular', 'svelte', 'html', 'javascript', 'typescript', 'node', 'express', 'nestjs', 'api', 'graphql', 'rest', 'backend', 'full-stack', 'frontend', 'wasm', 'pwa', 'remix', 'shopify', 'wordpress', 'django', 'flask', 'fastapi', 'php', 'ruby', 'rails', 'go-', 'rust', 'java', 'c-', 'cpp', 'ponytail', 'clean-code', 'kaizen'],
-    research: ['research', 'analysis', 'strategy', 'brainstorm', 'plan', 'document', 'architecture', 'diagram', 'uml', 'c4', 'review', 'audit'],
+    research: ['research', 'analysis', 'strategy', 'brainstorm', 'plan', 'document', 'architecture', 'diagram', 'uml', 'c4', 'review', 'audit', 'diagnos'],
     // Maker matches everything else useful for building
-    maker: ['tool', 'automation', 'productivity', 'notion', 'obsidian', 'workflow', 'script', 'bot', 'scraper', 'data', 'excel', 'csv', 'pdf', 'video', 'image', 'audio', 'file', 'mcp']
+    maker: ['tool', 'automation', 'productivity', 'notion', 'obsidian', 'workflow', 'script', 'bot', 'scraper', 'data', 'excel', 'csv', 'pdf', 'video', 'image', 'audio', 'file', 'mcp', 'superpowers', 'skill']
 };
 
 const categorizedSkills = {
