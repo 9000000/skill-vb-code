@@ -104,7 +104,28 @@ npx skill-vb-code@latest my-awesome-project
 
 ---
 
-## 📋 5. Tóm Tắt Cheatsheet 1 Lệnh (Copy & Run)
+## ⚡ 5. Tự Động Hóa 1 Click Bằng File `.bat` (Khuyên Dùng)
+
+Bạn có thể chạy script [`publish.bat`](file:///f:/MyGithub/skill-vb-code/publish.bat) trực tiếp:
+- **Cách 1**: Click đúp chuột vào file `publish.bat` trong thư mục dự án.
+- **Cách 2**: Chạy từ terminal:
+  ```cmd
+  .\publish.bat
+  # hoặc: npm run release
+  ```
+
+Script sẽ tự động:
+1. Kiểm tra đăng nhập tài khoản NPM (`npm whoami`).
+2. Cho phép bạn chọn mức tăng version (`patch`, `minor`, `major` hoặc tự nhập).
+3. Cho phép nhập nội dung sửa đổi (Commit message).
+4. Chạy toàn bộ bộ test `npm test`.
+5. Đóng gói bundle `npm run prepublishOnly`.
+6. Publish lên NPM (`npm publish --access public`).
+7. Commit và hỏi bạn có muốn đẩy lên GitHub (`git push origin main`) hay không.
+
+---
+
+## 📋 6. Tóm Tắt Cheatsheet 1 Lệnh (Copy & Run)
 
 Mỗi lần muốn đẩy phiên bản vá lỗi mới:
 ```bash

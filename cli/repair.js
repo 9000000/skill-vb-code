@@ -11,6 +11,7 @@ const { getRulesList, getAgentsList } = require('./logic/manifest-manager');
 const { generateGeminiMd } = require('./logic/gemini-generator');
 const { getScaleConfig } = require('./logic/scale-rules');
 const { getSkillsForCategories } = require('./logic/skill-definitions');
+const { installSuperpowersGlobal } = require('./logic/superpowers-installer');
 
 // Helper to determine file filter based on engine mode (Copied from create.js for consistency)
 function getEngineFilter(engineMode) {
@@ -198,6 +199,10 @@ async function repairProject(projectPath, options, config) {
                 console.log(chalk.yellow(`  ℹ️  Configuration updated: See GEMINI.new.md`));
             }
         }
+
+        // Install / Sync Superpowers skills globally (Original v6.4.2)
+        await installSuperpowersGlobal({ silent: config.skipPrompts });
+
         spinner.succeed('Core Configuration applied (v' + require('../package.json').version + ')');
 
         console.log(chalk.bold.green('\n✨ Repair & Sync Complete!'));

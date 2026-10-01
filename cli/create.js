@@ -15,6 +15,7 @@ const { getScaleConfig } = require('./logic/scale-rules');
 const { repairProject } = require('./repair');
 const { generateGeminiMd } = require('./logic/gemini-generator');
 const { getSkillsForCategories } = require('./logic/skill-definitions');
+const { installSuperpowersGlobal } = require('./logic/superpowers-installer');
 
 async function createProject(projectName, options, predefinedConfig = null) {
     try {
@@ -387,15 +388,18 @@ function printSuccessMessage(projectName, config, stats = null) {
     console.log('');
 }
 
-// Helper: Ensure Global Sync (~/.antigravity)
+// Helper: Ensure Global Sync (~/.gemini/config and ~/.antigravity)
 async function ensureGlobalSync(config, rulesList, agentsList) {
     try {
-        const globalDir = path.join(os.homedir(), '.antigravity');
+        const homedir = os.homedir();
+        const globalDir = path.join(homedir, '.antigravity');
+        const geminiConfigDir = path.join(homedir, '.gemini', 'config');
         const sourceAgentDir = path.join(__dirname, '..', '.agent');
         const filter = getEngineFilter(config.engineMode);
 
-        // Ensure global dir exists
+        // Ensure global dirs exist
         fs.ensureDirSync(globalDir);
+        fs.ensureDirSync(geminiConfigDir);
 
         // 1. Copy Shared
         if (fs.existsSync(path.join(sourceAgentDir, '.shared'))) {
@@ -403,15 +407,22 @@ async function ensureGlobalSync(config, rulesList, agentsList) {
                 overwrite: false, 
                 filter 
             });
+            await fs.copy(path.join(sourceAgentDir, '.shared'), path.join(geminiConfigDir, '.shared'), { 
+                overwrite: false, 
+                filter 
+            });
         }
 
         // 2. Copy Rules
         const rulesDest = path.join(globalDir, 'rules');
+        const geminiRulesDest = path.join(geminiConfigDir, 'rules');
         fs.ensureDirSync(rulesDest);
+        fs.ensureDirSync(geminiRulesDest);
         for (const rule of rulesList) {
             const src = path.join(sourceAgentDir, 'rules', rule);
             if (fs.existsSync(src)) {
                 await fs.copy(src, path.join(rulesDest, rule), { overwrite: false });
+                await fs.copy(src, path.join(geminiRulesDest, rule), { overwrite: false });
             }
         }
 
@@ -421,9 +432,14 @@ async function ensureGlobalSync(config, rulesList, agentsList) {
         // 4. Copy Skills (All standard skills)
         const skillsSource = path.join(sourceAgentDir, 'skills');
         const skillsDest = path.join(globalDir, 'skills');
+        const geminiSkillsDest = path.join(geminiConfigDir, 'skills');
         if (fs.existsSync(skillsSource)) {
             // We copy ALL skills to global to ensure the full arsenal is available
             await fs.copy(skillsSource, skillsDest, { 
+                overwrite: false, 
+                filter 
+            });
+            await fs.copy(skillsSource, geminiSkillsDest, { 
                 overwrite: false, 
                 filter 
             });
@@ -436,6 +452,9 @@ async function ensureGlobalSync(config, rulesList, agentsList) {
             await fs.copy(workflowsSource, workflowsDest, { overwrite: false });
         }
 
+        // 6. Install / Sync Superpowers skills globally (Original v6.4.2)
+        await installSuperpowersGlobal({ silent: config.skipPrompts });
+
     } catch (e) {
         // Silent fail for global sync is acceptable to avoid breaking project flow
         // console.error('Global sync warning:', e.message);
@@ -444,5 +463,6 @@ async function ensureGlobalSync(config, rulesList, agentsList) {
 
 module.exports = {
     createProject,
-    generateGeminiMd
+    generateGeminiMd,
+    ensureGlobalSync
 };

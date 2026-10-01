@@ -231,6 +231,10 @@ async function setup() {
     });
     console.log('✅ Global Cache is up-to-date (Full Enterprise Mode).');
 
+    // Sync Superpowers skills globally (Original v6.4.2)
+    const { installSuperpowersGlobal } = require('./cli/logic/superpowers-installer');
+    await installSuperpowersGlobal({ silent: false });
+
     // 7. Initialize Workspace (Apply Scale Logic to Local Project)
     // Only copy specific rules to current directory based on Scale
     console.log(`\n📂 Initializing Workspace (Scale: ${projectScale.toUpperCase()})...`);
