@@ -60,7 +60,7 @@ async function main() {
 
         fs.copyFileSync(WORKSPACE_VERSION_FILE, GLOBAL_VERSION_FILE);
 
-        // Sync Superpowers skills locally in the workspace (.agent/skills & .agents/skills)
+        // Sync Superpowers skills locally in the workspace (.agent/skills)
         const { installSuperpowersToProject } = require('./cli/logic/superpowers-installer');
         await installSuperpowersToProject(WORKSPACE_DIR, { silent: false });
 

@@ -205,7 +205,7 @@ async function repairProject(projectPath, options, config) {
             }
         }
 
-        // Ensure Superpowers skills are installed/synced locally in the project (.agent/skills & .agents/skills)
+        // Ensure Superpowers skills are installed/synced locally in the project (.agent/skills)
         await installSuperpowersToProject(projectPath, { silent: config.skipPrompts, force: options.force });
 
         spinner.succeed('Core Configuration applied (v' + require('../package.json').version + ')');

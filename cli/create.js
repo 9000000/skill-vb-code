@@ -115,7 +115,7 @@ async function createProject(projectName, options, predefinedConfig = null) {
             spinner.succeed(`Installed ${skillCount} skills across ${finalSkillCategories.length} categories`);
         }
 
-        // Install Superpowers skills specifically into this project (.agent/skills & .agents/skills)
+        // Install Superpowers skills specifically into this project (.agent/skills)
         await installSuperpowersToProject(projectPath, { silent: config.skipPrompts, force: config.force });
 
         // Copy workflows

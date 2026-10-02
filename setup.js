@@ -275,7 +275,7 @@ async function setup() {
          console.log(`✅ Applied Full Enterprise rules to Workspace.`);
     }
 
-    // Install Superpowers skills specifically into this project (.agent/skills & .agents/skills)
+    // Install Superpowers skills specifically into this project (.agent/skills)
     const { installSuperpowersToProject } = require('./cli/logic/superpowers-installer');
     await installSuperpowersToProject(process.cwd(), { silent: false });
 

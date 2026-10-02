@@ -40,10 +40,10 @@ describe('Superpowers Installer & Manager', () => {
         expect(result.installedSkills).toHaveLength(15);
 
         const projectAgentSkillsDir = path.join(testProjectDir, '.agent', 'skills');
-        const projectAgentsSkillsDir = path.join(testProjectDir, '.agents', 'skills');
+        const projectAgentsSkillsDir = path.join(testProjectDir, '.agents');
 
         expect(fs.existsSync(projectAgentSkillsDir)).toBe(true);
-        expect(fs.existsSync(projectAgentsSkillsDir)).toBe(true);
+        expect(fs.existsSync(projectAgentsSkillsDir)).toBe(false);
 
         // Verify each skill has SKILL.md in project directories
         for (const skill of SUPERPOWERS_SKILLS) {
@@ -52,6 +52,15 @@ describe('Superpowers Installer & Manager', () => {
             const content = fs.readFileSync(skillMd, 'utf-8');
             expect(content.length).toBeGreaterThan(50);
         }
+    });
+
+    it('should clean up .agents directory if previously created', async () => {
+        const dummyAgentsDir = path.join(testProjectDir, '.agents');
+        fs.ensureDirSync(dummyAgentsDir);
+        expect(fs.existsSync(dummyAgentsDir)).toBe(true);
+
+        await installSuperpowersToProject(testProjectDir, { silent: true });
+        expect(fs.existsSync(dummyAgentsDir)).toBe(false);
     });
 
     it('should clean up global superpowers skills safely', async () => {

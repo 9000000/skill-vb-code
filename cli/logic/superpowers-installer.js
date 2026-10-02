@@ -81,7 +81,8 @@ function getSourceSkillsDir() {
 
 /**
  * Install Superpowers skills directly into an individual project.
- * Targets both .agent/skills and .agents/skills for native Antigravity IDE workspace discovery.
+ * Targets .agent/skills to keep everything unified in the original .agent directory.
+ * Also cleans up any unwanted .agents directory in the project.
  * 
  * @param {string} projectPath
  * @param {Object} options
@@ -105,7 +106,6 @@ async function installSuperpowersToProject(projectPath, options = {}) {
 
   try {
     const destAgentSkills = path.join(projectPath, '.agent', 'skills');
-    const destAgentsSkills = path.join(projectPath, '.agents', 'skills');
 
     fs.ensureDirSync(destAgentSkills);
     targetDirs.push(destAgentSkills);
@@ -120,12 +120,16 @@ async function installSuperpowersToProject(projectPath, options = {}) {
       }
     }
 
-    // Ensure Antigravity IDE workspace customizations root (.agents/skills) is also populated
-    linkOrCopyDir(destAgentSkills, destAgentsSkills);
-    targetDirs.push(destAgentsSkills);
+    // Clean up .agents directory if present to keep everything unified in .agent
+    const legacyAgentsDir = path.join(projectPath, '.agents');
+    if (fs.existsSync(legacyAgentsDir)) {
+      try {
+        fs.removeSync(legacyAgentsDir);
+      } catch (_) {}
+    }
 
     if (!silent) {
-      console.log(chalk.green(`  ⚡ Đã cài đặt ${installedSkills.length} Superpowers skills vào dự án riêng (${path.basename(projectPath || '.')})`));
+      console.log(chalk.green(`  ⚡ Đã cài đặt ${installedSkills.length} Superpowers skills vào .agent/skills của dự án (${path.basename(projectPath || '.')})`));
     }
 
     return {
