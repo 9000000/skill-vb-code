@@ -1,7 +1,8 @@
 /**
- * Superpowers Global Installer
- * Installs and synchronizes the original Superpowers skills (v6.4.2)
- * globally across the user's environment for Antigravity IDE and companion CLIs.
+ * Superpowers Installer & Manager
+ * Manages original Superpowers skills (v6.4.2) from https://github.com/9000000/superpowers.git
+ * Installs skills scoped to individual projects (Antigravity IDE workspace standard)
+ * and cleans up global duplicates to prevent Token Budget Exceeded.
  */
 
 const fs = require('fs-extra');
@@ -35,7 +36,6 @@ const SUPERPOWERS_SKILLS = [
 function linkOrCopyDir(targetPath, linkPath) {
   try {
     if (fs.existsSync(linkPath)) {
-      // Check if already pointing to the target
       try {
         const real = fs.realpathSync(linkPath);
         if (path.resolve(real) === path.resolve(targetPath)) {
@@ -64,17 +64,152 @@ function linkOrCopyDir(targetPath, linkPath) {
 }
 
 /**
- * Install Superpowers skills globally
+ * Locate source skills directory (bundled repo or agent fallback)
+ */
+function getSourceSkillsDir() {
+  const bundledSuperpowersDir = path.join(__dirname, '..', '..', 'assets', 'superpowers');
+  const bundledSkillsDir = path.join(bundledSuperpowersDir, 'skills');
+  const agentSkillsFallback = path.join(__dirname, '..', '..', '.agent', 'skills');
+
+  if (fs.existsSync(bundledSkillsDir)) {
+    return { dir: bundledSkillsDir, hasFullRepo: true, fullRepoDir: bundledSuperpowersDir };
+  } else if (fs.existsSync(agentSkillsFallback)) {
+    return { dir: agentSkillsFallback, hasFullRepo: false, fullRepoDir: null };
+  }
+  return { dir: null, hasFullRepo: false, fullRepoDir: null };
+}
+
+/**
+ * Install Superpowers skills directly into an individual project.
+ * Targets both .agent/skills and .agents/skills for native Antigravity IDE workspace discovery.
+ * 
+ * @param {string} projectPath
  * @param {Object} options
  * @param {boolean} [options.silent=false]
- * @param {boolean} [options.force=false]
- * @returns {Promise<{success: boolean, count: number, targets: string[]}>}
+ * @param {boolean} [options.force=true]
+ * @returns {Promise<{success: boolean, count: number, installedSkills: string[], targetDirs: string[]}>}
+ */
+async function installSuperpowersToProject(projectPath, options = {}) {
+  const silent = !!options.silent;
+  const force = options.force !== false;
+  const targetDirs = [];
+  const installedSkills = [];
+
+  const { dir: sourceSkillsDir } = getSourceSkillsDir();
+  if (!sourceSkillsDir) {
+    if (!silent) {
+      console.warn(chalk.yellow('⚠️ Superpowers source directory not found. Skipping project skill installation.'));
+    }
+    return { success: false, count: 0, installedSkills: [], targetDirs: [] };
+  }
+
+  try {
+    const destAgentSkills = path.join(projectPath, '.agent', 'skills');
+    const destAgentsSkills = path.join(projectPath, '.agents', 'skills');
+
+    fs.ensureDirSync(destAgentSkills);
+    targetDirs.push(destAgentSkills);
+
+    for (const skill of SUPERPOWERS_SKILLS) {
+      const src = path.join(sourceSkillsDir, skill);
+      const dest = path.join(destAgentSkills, skill);
+
+      if (fs.existsSync(src)) {
+        await fs.copy(src, dest, { overwrite: force });
+        installedSkills.push(skill);
+      }
+    }
+
+    // Ensure Antigravity IDE workspace customizations root (.agents/skills) is also populated
+    linkOrCopyDir(destAgentSkills, destAgentsSkills);
+    targetDirs.push(destAgentsSkills);
+
+    if (!silent) {
+      console.log(chalk.green(`  ⚡ Đã cài đặt ${installedSkills.length} Superpowers skills vào dự án riêng (${path.basename(projectPath || '.')})`));
+    }
+
+    return {
+      success: true,
+      count: installedSkills.length,
+      installedSkills,
+      targetDirs
+    };
+  } catch (err) {
+    if (!silent) {
+      console.warn(chalk.yellow(`  ⚠️ Project Superpowers installation notice: ${err.message}`));
+    }
+    return {
+      success: false,
+      count: installedSkills.length,
+      installedSkills,
+      targetDirs,
+      error: err.message
+    };
+  }
+}
+
+/**
+ * Clean up global Superpowers skills and plugins from ~/.gemini and ~/.antigravity
+ * to eliminate duplicate loading and Token Budget Exceeded errors.
+ * 
+ * @param {Object} options
+ * @param {boolean} [options.silent=false]
+ * @returns {Promise<{success: boolean, removedCount: number, removedPaths: string[]}>}
+ */
+async function cleanSuperpowersGlobal(options = {}) {
+  const silent = !!options.silent;
+  const homedir = os.homedir();
+  const removedPaths = [];
+
+  const candidateDirs = [
+    path.join(homedir, '.gemini', 'config', 'skills'),
+    path.join(homedir, '.gemini', 'skills'),
+    path.join(homedir, '.agents', 'skills'),
+    path.join(homedir, '.antigravity', 'skills')
+  ];
+
+  for (const baseDir of candidateDirs) {
+    if (!fs.existsSync(baseDir)) continue;
+
+    for (const skill of SUPERPOWERS_SKILLS) {
+      const skillPath = path.join(baseDir, skill);
+      if (fs.existsSync(skillPath)) {
+        try {
+          fs.removeSync(skillPath);
+          removedPaths.push(skillPath);
+        } catch (_) {}
+      }
+    }
+  }
+
+  // Remove global plugin clone if present
+  const globalPluginDir = path.join(homedir, '.gemini', 'config', 'plugins', 'superpowers');
+  if (fs.existsSync(globalPluginDir)) {
+    try {
+      fs.removeSync(globalPluginDir);
+      removedPaths.push(globalPluginDir);
+    } catch (_) {}
+  }
+
+  if (!silent && removedPaths.length > 0) {
+    console.log(chalk.green(`  🧹 Đã gỡ bỏ ${removedPaths.length} mục Superpowers khỏi môi trường Global.`));
+  }
+
+  return {
+    success: true,
+    removedCount: removedPaths.length,
+    removedPaths
+  };
+}
+
+/**
+ * @deprecated Use installSuperpowersToProject instead.
+ * Install Superpowers skills globally (Manual opt-in only)
  */
 async function installSuperpowersGlobal(options = {}) {
   const silent = !!options.silent;
   const homedir = os.homedir();
 
-  // Destination directories
   const geminiConfigDir = path.join(homedir, '.gemini', 'config');
   const globalSkillsDir = path.join(geminiConfigDir, 'skills');
   const globalPluginsDir = path.join(geminiConfigDir, 'plugins', 'superpowers');
@@ -82,20 +217,7 @@ async function installSuperpowersGlobal(options = {}) {
   const agentsSkillsDir = path.join(homedir, '.agents', 'skills');
   const legacyGlobalDir = path.join(homedir, '.antigravity', 'skills');
 
-  // Source directories
-  const bundledSuperpowersDir = path.join(__dirname, '..', '..', 'assets', 'superpowers');
-  const bundledSkillsDir = path.join(bundledSuperpowersDir, 'skills');
-  const agentSkillsFallback = path.join(__dirname, '..', '..', '.agent', 'skills');
-
-  let sourceSkillsDir = null;
-  let hasFullRepo = false;
-
-  if (fs.existsSync(bundledSkillsDir)) {
-    sourceSkillsDir = bundledSkillsDir;
-    hasFullRepo = true;
-  } else if (fs.existsSync(agentSkillsFallback)) {
-    sourceSkillsDir = agentSkillsFallback;
-  }
+  const { dir: sourceSkillsDir, hasFullRepo, fullRepoDir } = getSourceSkillsDir();
 
   if (!sourceSkillsDir) {
     if (!silent) {
@@ -108,11 +230,9 @@ async function installSuperpowersGlobal(options = {}) {
   const targets = [];
 
   try {
-    // 1. Ensure target directories exist
     fs.ensureDirSync(globalSkillsDir);
     targets.push(globalSkillsDir);
 
-    // 2. Install each of the 15 Superpowers skills into ~/.gemini/config/skills/
     for (const skill of SUPERPOWERS_SKILLS) {
       const src = path.join(sourceSkillsDir, skill);
       const dest = path.join(globalSkillsDir, skill);
@@ -123,24 +243,21 @@ async function installSuperpowersGlobal(options = {}) {
       }
     }
 
-    // 3. Install full plugin into ~/.gemini/config/plugins/superpowers/ if repo bundle exists
-    if (hasFullRepo && fs.existsSync(bundledSuperpowersDir)) {
+    if (hasFullRepo && fullRepoDir && fs.existsSync(fullRepoDir)) {
       fs.ensureDirSync(globalPluginsDir);
-      await fs.copy(bundledSuperpowersDir, globalPluginsDir, {
+      await fs.copy(fullRepoDir, globalPluginsDir, {
         overwrite: true,
         filter: (src) => !src.includes('.git')
       });
       targets.push(globalPluginsDir);
     }
 
-    // 4. Create cross-runtime junctions/links for ~/.gemini/skills and ~/.agents/skills
     linkOrCopyDir(globalSkillsDir, geminiSkillsDir);
     targets.push(geminiSkillsDir);
 
     linkOrCopyDir(globalSkillsDir, agentsSkillsDir);
     targets.push(agentsSkillsDir);
 
-    // 5. Sync to legacy ~/.antigravity/skills for backwards compatibility
     try {
       fs.ensureDirSync(legacyGlobalDir);
       for (const skill of installedSkills) {
@@ -154,7 +271,7 @@ async function installSuperpowersGlobal(options = {}) {
     } catch (_) {}
 
     if (!silent) {
-      console.log(chalk.green(`  ⚡ Installed ${installedSkills.length} Superpowers skills globally (original v6.4.2)`));
+      console.log(chalk.yellow(`  ⚠️ Đã cài ${installedSkills.length} Superpowers skills vào Global (Lưu ý: Có thể gây tốn Token Budget).`));
     }
 
     return {
@@ -178,6 +295,8 @@ async function installSuperpowersGlobal(options = {}) {
 }
 
 module.exports = {
+  installSuperpowersToProject,
+  cleanSuperpowersGlobal,
   installSuperpowersGlobal,
   SUPERPOWERS_SKILLS,
   SUPERPOWERS_REPO_URL

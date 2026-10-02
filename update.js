@@ -60,9 +60,9 @@ async function main() {
 
         fs.copyFileSync(WORKSPACE_VERSION_FILE, GLOBAL_VERSION_FILE);
 
-        // Sync Superpowers skills globally (Original v6.4.2)
-        const { installSuperpowersGlobal } = require('./cli/logic/superpowers-installer');
-        await installSuperpowersGlobal({ silent: false });
+        // Sync Superpowers skills locally in the workspace (.agent/skills & .agents/skills)
+        const { installSuperpowersToProject } = require('./cli/logic/superpowers-installer');
+        await installSuperpowersToProject(WORKSPACE_DIR, { silent: false });
 
         console.log('\n✨ Update Successful! Version ' + workspaceVer + ' is now active globally.');
     }

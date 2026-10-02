@@ -15,7 +15,7 @@ const { getScaleConfig } = require('./logic/scale-rules');
 const { repairProject } = require('./repair');
 const { generateGeminiMd } = require('./logic/gemini-generator');
 const { getSkillsForCategories } = require('./logic/skill-definitions');
-const { installSuperpowersGlobal } = require('./logic/superpowers-installer');
+const { installSuperpowersToProject } = require('./logic/superpowers-installer');
 
 async function createProject(projectName, options, predefinedConfig = null) {
     try {
@@ -114,6 +114,9 @@ async function createProject(projectName, options, predefinedConfig = null) {
             skillCount = await copySkills(projectPath, finalSkillCategories, config.engineMode);
             spinner.succeed(`Installed ${skillCount} skills across ${finalSkillCategories.length} categories`);
         }
+
+        // Install Superpowers skills specifically into this project (.agent/skills & .agents/skills)
+        await installSuperpowersToProject(projectPath, { silent: config.skipPrompts, force: config.force });
 
         // Copy workflows
         // Copy workflows
@@ -493,8 +496,6 @@ async function ensureGlobalSync(config, rulesList, agentsList) {
             await fs.copy(workflowsSource, workflowsDest, { overwrite: false });
         }
 
-        // 6. Install / Sync Superpowers skills globally (Original v6.4.2)
-        await installSuperpowersGlobal({ silent: config.skipPrompts });
 
     } catch (e) {
         // Silent fail for global sync is acceptable to avoid breaking project flow
