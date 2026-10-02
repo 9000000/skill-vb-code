@@ -179,14 +179,26 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
 }
 
 
-async function confirmOverwrite(fileName) {
+async function confirmOverwrite(fileName, language = 'vi') {
+  const isVi = language === 'vi';
   const response = await prompts({
-    type: 'confirm',
+    type: 'select',
     name: 'value',
-    message: chalk.yellow(`⚠️  File "${fileName}" already exists. Overwrite? / File đã tồn tại. Ghi đè?`),
-    initial: false
+    message: chalk.yellow(
+      isVi 
+        ? `⚠️  File "${fileName}" đã tồn tại. Bạn muốn xử lý thế nào?` 
+        : `⚠️  File "${fileName}" already exists. How would you like to proceed?`
+    ),
+    choices: isVi ? [
+      { title: '❌ Không ghi đè (Tạo file dự phòng .new.md, giữ nguyên file cũ)', value: false },
+      { title: '⚠️ Ghi đè (Thay thế bằng file cấu hình mới)', value: true }
+    ] : [
+      { title: '❌ Do not overwrite (Create .new.md backup, preserve current file)', value: false },
+      { title: '⚠️ Overwrite (Replace with new configuration)', value: true }
+    ],
+    initial: 0
   });
-  return response.value;
+  return Boolean(response && response.value);
 }
 
 module.exports = {

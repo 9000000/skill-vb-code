@@ -67,7 +67,7 @@ async function createProject(projectName, options, predefinedConfig = null) {
         const agentsToInstall = [...new Set(rawAgentsToInstall)];
 
         // 2. Copy Base Structure + Selective Rules/Agents
-        await copyModularStructure(projectPath, config, rulesToInstall, agentsToInstall);
+        await copyModularStructure(projectPath, config, rulesToInstall, agentsToInstall, spinner);
         
         // 2b. Global Sync: ONLY if explicitly requested via options.global (Default: project-only)
         if (options && options.global) {
@@ -194,7 +194,7 @@ async function createProject(projectName, options, predefinedConfig = null) {
 }
 
 // Helper to handle core file conflicts (auto-create backup if exists)
-async function handleCoreFileConflict(filePath, fileName, force = false, skipPrompts = false) {
+async function handleCoreFileConflict(filePath, fileName, force = false, skipPrompts = false, spinner = null, language = 'vi') {
     if (!fs.existsSync(filePath)) {
         return { shouldWrite: true, targetPath: filePath };
     }
@@ -205,7 +205,13 @@ async function handleCoreFileConflict(filePath, fileName, force = false, skipPro
 
     // Interactive Prompt (Only if prompts are allowed)
     if (!skipPrompts) {
-        const shouldOverwrite = await confirmOverwrite(fileName);
+        if (spinner && typeof spinner.stop === 'function') {
+            spinner.stop();
+        }
+        const shouldOverwrite = await confirmOverwrite(fileName, language);
+        if (spinner && typeof spinner.start === 'function') {
+            spinner.start();
+        }
         if (shouldOverwrite) {
             return { shouldWrite: true, targetPath: filePath, isOverwrite: true };
         }
@@ -239,7 +245,7 @@ function getEngineFilter(engineMode) {
     };
 }
 
-async function copyModularStructure(projectPath, config, rulesList, agentsList) {
+async function copyModularStructure(projectPath, config, rulesList, agentsList, spinner = null) {
     const sourceAgentDir = path.join(__dirname, '..', '.agent');
     const destAgentDir = path.join(projectPath, '.agent');
     const filter = getEngineFilter(config.engineMode);
@@ -293,7 +299,14 @@ async function copyModularStructure(projectPath, config, rulesList, agentsList) 
 
     // 5. Create GEMINI.md (Core file) - Write ONLY to Root, not to .agent/
     const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain, config.agentName);
-    const geminiDecision = await handleCoreFileConflict(path.join(projectPath, 'GEMINI.md'), 'GEMINI.md', config.force, config.skipPrompts);
+    const geminiDecision = await handleCoreFileConflict(
+        path.join(projectPath, 'GEMINI.md'), 
+        'GEMINI.md', 
+        config.force, 
+        config.skipPrompts, 
+        spinner, 
+        config.language
+    );
 
     if (geminiDecision.shouldWrite) {
         fs.writeFileSync(geminiDecision.targetPath, geminiContent);
