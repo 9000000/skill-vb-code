@@ -69,8 +69,10 @@ async function createProject(projectName, options, predefinedConfig = null) {
         // 2. Copy Base Structure + Selective Rules/Agents
         await copyModularStructure(projectPath, config, rulesToInstall, agentsToInstall);
         
-        // 2b. Global Sync (Dual-Scope Strategy)
-        await ensureGlobalSync(config, rulesToInstall, agentsToInstall);
+        // 2b. Global Sync: ONLY if explicitly requested via options.global (Default: project-only)
+        if (options && options.global) {
+            await ensureGlobalSync(config, rulesToInstall, agentsToInstall);
+        }
         
         spinner.succeed('Project structure created (Modular Mode)');
 
@@ -262,10 +264,23 @@ async function copyModularStructure(projectPath, config, rulesList, agentsList) 
     fs.mkdirSync(rulesDest, { recursive: true });
     
     for (const rule of rulesList) {
+        // Skip GEMINI.md because GEMINI.md is generated strictly at the project root!
+        // Copying it to .agent/rules/ causes Antigravity IDE to load rules twice and exceeds the token budget.
+        if (rule === 'GEMINI.md') continue;
         const srcRule = path.join(sourceAgentDir, 'rules', rule);
         if (fs.existsSync(srcRule)) {
             await fs.copy(srcRule, path.join(rulesDest, rule));
         }
+    }
+
+    // Cleanup redundant GEMINI.md in .agent/ or .agent/rules/ if present
+    const agentRulesGemini = path.join(rulesDest, 'GEMINI.md');
+    if (fs.existsSync(agentRulesGemini)) {
+        try { fs.unlinkSync(agentRulesGemini); } catch (_) {}
+    }
+    const agentGemini = path.join(destAgentDir, 'GEMINI.md');
+    if (fs.existsSync(agentGemini)) {
+        try { fs.unlinkSync(agentGemini); } catch (_) {}
     }
 
     // 3. Agents (Skipped - Single Context Optimization)
@@ -382,6 +397,19 @@ function printSuccessMessage(projectName, config, stats = null) {
 
     console.log('');
     console.log(chalk.dim(config.language === 'vi' ? '     AI sẽ tự động tải các kỹ năng và quy tắc.' : '     The AI will load all skills and rules automatically.'));
+
+    // Check if global rules conflict exists in ~/.gemini/config/rules
+    try {
+        const geminiRulesDir = path.join(os.homedir(), '.gemini', 'config', 'rules');
+        if (fs.existsSync(geminiRulesDir)) {
+            const files = fs.readdirSync(geminiRulesDir);
+            if (files.some(f => ['GEMINI.md', 'error-logging.md', 'docs-update.md'].includes(f))) {
+                console.log(chalk.yellow('\n  ⚠️  Lưu ý: Phát hiện rules cũ trong ~/.gemini/config/rules/ gây nhân đôi token.'));
+                console.log(chalk.yellow('     Chạy lệnh sau để dọn dẹp: ') + chalk.bold.cyan('npx skill-vb-code clean-global'));
+            }
+        }
+    } catch (_) {}
+
     console.log(gradient.pastel('━'.repeat(60)));
     console.log('');
     console.log(chalk.gray('  Developed with 💡 by Dokhacgiakhoa'));

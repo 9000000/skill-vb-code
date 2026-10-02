@@ -69,6 +69,7 @@ async function repairProject(projectPath, options, config) {
         if (fs.existsSync(rulesSourceDir)) {
             const rulesToRestore = getRulesList(config.rules || 'creative', config.productType || 'other');
             for (const rule of rulesToRestore) {
+                if (rule === 'GEMINI.md') continue; // Skip GEMINI.md to prevent duplicate rules in .agent/rules/
                 const srcRule = path.join(rulesSourceDir, rule);
                 const destRule = path.join(rulesDestDir, rule);
                 
@@ -183,10 +184,14 @@ async function repairProject(projectPath, options, config) {
         
         const rootGeminiPath = path.join(projectPath, 'GEMINI.md');
         const agentGeminiPath = path.join(agentDir, 'GEMINI.md');
+        const agentRulesGeminiPath = path.join(rulesDestDir, 'GEMINI.md');
 
-        // Cleanup: Remove redundant .agent/GEMINI.md if it exists (User request: Don't duplicate)
+        // Cleanup: Remove redundant .agent/GEMINI.md and .agent/rules/GEMINI.md
         if (fs.existsSync(agentGeminiPath)) {
-            fs.unlinkSync(agentGeminiPath);
+            try { fs.unlinkSync(agentGeminiPath); } catch (_) {}
+        }
+        if (fs.existsSync(agentRulesGeminiPath)) {
+            try { fs.unlinkSync(agentRulesGeminiPath); } catch (_) {}
         }
         
         if (!fs.existsSync(rootGeminiPath) || options.force) {
@@ -200,8 +205,10 @@ async function repairProject(projectPath, options, config) {
             }
         }
 
-        // Install / Sync Superpowers skills globally (Original v6.4.2)
-        await installSuperpowersGlobal({ silent: config.skipPrompts });
+        // Install / Sync Superpowers skills globally ONLY if explicitly requested
+        if (options && options.global) {
+            await installSuperpowersGlobal({ silent: config.skipPrompts });
+        }
 
         spinner.succeed('Core Configuration applied (v' + require('../package.json').version + ')');
 

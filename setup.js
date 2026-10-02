@@ -231,9 +231,12 @@ async function setup() {
     });
     console.log('✅ Global Cache is up-to-date (Full Enterprise Mode).');
 
-    // Sync Superpowers skills globally (Original v6.4.2)
-    const { installSuperpowersGlobal } = require('./cli/logic/superpowers-installer');
-    await installSuperpowersGlobal({ silent: false });
+    // Sync Superpowers skills globally ONLY if explicitly requested
+    const isGlobal = process.argv.includes('--global') || process.argv.includes('-g');
+    if (isGlobal) {
+        const { installSuperpowersGlobal } = require('./cli/logic/superpowers-installer');
+        await installSuperpowersGlobal({ silent: false });
+    }
 
     // 7. Initialize Workspace (Apply Scale Logic to Local Project)
     // Only copy specific rules to current directory based on Scale
@@ -245,12 +248,12 @@ async function setup() {
     // Create local .agent struct if not exists
     if (!fs.existsSync(localRulesDir)) fs.mkdirSync(localRulesDir, { recursive: true });
 
-    // Define rules for each scale
+    // Define rules for each scale (GEMINI.md is generated at root only)
     const rulesToApply = {
-        'instant': ['GEMINI.md', 'security.md', 'debug.md'], // Minimal
-        'personal': ['GEMINI.md', 'security.md', 'debug.md'], // Legacy fallback
+        'instant': ['security.md', 'debug.md'], // Minimal
+        'personal': ['security.md', 'debug.md'], // Legacy fallback
         'creative': null, // All Rules (Full Power)
-        'sme': ['GEMINI.md', 'security.md', 'frontend.md', 'backend.md', 'debug.md', 'business.md', 'compliance.md', 'architecture-review.md'],
+        'sme': ['security.md', 'frontend.md', 'backend.md', 'debug.md', 'business.md', 'compliance.md', 'architecture-review.md'],
         'enterprise': null // All Rules
     };
 
@@ -259,6 +262,7 @@ async function setup() {
     if (targetRules) {
         // Copy specific files from GLOBAL to LOCAL
         targetRules.forEach(file => {
+            if (file === 'GEMINI.md') return;
             const globalFile = path.join(GLOBAL_DIR, 'rules', file);
             const localFile = path.join(localRulesDir, file);
             if (fs.existsSync(globalFile)) {
@@ -267,20 +271,22 @@ async function setup() {
         });
         console.log(`✅ Applied ${targetRules.length} rules to Workspace.`);
     } else {
-        // Enterprise: Copy ALL rules from Global to Local
+        // Enterprise: Copy ALL rules from Global to Local (except GEMINI.md)
          const globalRulesDir = path.join(GLOBAL_DIR, 'rules');
          if (fs.existsSync(globalRulesDir)) {
              fs.readdirSync(globalRulesDir).forEach(file => {
+                 if (file === 'GEMINI.md') return;
                  fs.copyFileSync(path.join(globalRulesDir, file), path.join(localRulesDir, file));
              });
          }
          console.log(`✅ Applied Full Enterprise rules to Workspace.`);
     }
 
-    // 8. Inject Config into Workspace Rules (Agent Name & Domain)
-    const geminiRulePath = path.join(localRulesDir, 'GEMINI.md');
-    if (fs.existsSync(geminiRulePath)) {
-        let content = fs.readFileSync(geminiRulePath, 'utf-8');
+    // 8. Inject Config into Workspace Root GEMINI.md (Single Constitution)
+    const geminiRuleSrc = path.join(GLOBAL_DIR, 'rules', 'GEMINI.md');
+    const rootGeminiPath = path.join(process.cwd(), 'GEMINI.md');
+    if (fs.existsSync(geminiRuleSrc)) {
+        let content = fs.readFileSync(geminiRuleSrc, 'utf-8');
         
         // Inject Agent Name
         if (agentName && agentName !== 'Antigravity') {
@@ -298,8 +304,17 @@ async function setup() {
             );
         }
 
-        fs.writeFileSync(geminiRulePath, content);
-        // console.log(`✅ Configured GEMINI.md with Agent Name & Industry context.`); // Suppress simple log
+        fs.writeFileSync(rootGeminiPath, content);
+    }
+
+    // Clean up duplicate GEMINI.md in .agent/rules/ or .agent/ if exists
+    const duplicateAgentRulesGemini = path.join(localRulesDir, 'GEMINI.md');
+    if (fs.existsSync(duplicateAgentRulesGemini)) {
+        try { fs.unlinkSync(duplicateAgentRulesGemini); } catch (_) {}
+    }
+    const duplicateAgentGemini = path.join(localAgentDir, 'GEMINI.md');
+    if (fs.existsSync(duplicateAgentGemini)) {
+        try { fs.unlinkSync(duplicateAgentGemini); } catch (_) {}
     }
 
     // 3. Localize Workflows (Kept logic index same for simplicity, technically step 9 now)

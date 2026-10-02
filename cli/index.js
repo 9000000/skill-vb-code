@@ -25,6 +25,7 @@ const { checkAndApplyUpdates } = require('./lib/auto-update');
       .option('-t, --template <type>', 'Project template (minimal, standard, full)', 'standard')
       .option('-s, --skip-prompts', 'Skip interactive prompts and use defaults')
       .option('-f, --force', 'Force overwrite/restore files during Repair')
+      .option('-g, --global', 'Sync to global ~/.gemini/config (default: false, project-scoped only)')
       .action(async (projectName, options) => {
         await createProject(projectName, options);
       });
@@ -32,6 +33,7 @@ const { checkAndApplyUpdates } = require('./lib/auto-update');
     program
       .command('init')
       .description('Alias for the root command: Initialize or Repair project')
+      .option('-g, --global', 'Sync to global ~/.gemini/config (default: false)')
       .action(async (options) => {
         // Just run createProject in current dir - it handles existing projects via Repair mode
         await createProject('.', options);
@@ -39,9 +41,18 @@ const { checkAndApplyUpdates } = require('./lib/auto-update');
 
     program
       .command('update')
-      .description('Sync and Repair the current project with the latest global standards')
+      .description('Sync and Repair the current project with the latest standards')
+      .option('-g, --global', 'Sync to global ~/.gemini/config (default: false)')
       .action(async (options) => {
         await createProject('.', { ...options, force: true });
+      });
+
+    program
+      .command('clean-global')
+      .description('Clean up duplicate rules in global ~/.gemini/config to fix Token Budget Exceeded')
+      .action(async () => {
+        const { cleanGlobalConfig } = require('./logic/clean-global');
+        await cleanGlobalConfig();
       });
 
     program
