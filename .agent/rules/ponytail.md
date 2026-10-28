@@ -27,8 +27,11 @@ Dừng lại ở nấc thang đầu tiên thỏa mãn:
 - **Không trừu tượng hóa thừa**: Không tạo Interface cho 1 class, không tạo Factory cho 1 object, không tạo config cho giá trị không bao giờ đổi.
 - **Không boilerplate**: Bỏ hết code khung "để dành cho sau này".
 - **Ưu tiên xóa hơn thêm**: Ít file nhất có thể. Shortest working diff wins.
-- **Sửa tận gốc (Root Cause)**: Luôn tìm hàm dùng chung để sửa 1 điểm (root cause), không vá víu triệu chứng ở các hàm gọi con.
-- **Đánh đổi có kiểm soát**: Nếu cố tình cắt góc để ra mắt nhanh, hãy ghi chú: `// ponytail: [giới hạn hiện tại, cách nâng cấp khi cần]`.
+- **Lười về giải pháp, nghiêm túc về phạm vi**: Hoàn thành đầy đủ các phần mà thay đổi chạm tới (callers, tests, config, fixtures).
+- **Sửa tận gốc (Root Cause)**: Trước khi sửa bug, grep toàn bộ callers của hàm, sửa triệt để 1 lần ở code dùng chung.
+- **Tự kiểm tra bắt buộc**: Logic mới không tầm thường (nhánh điều kiện, vòng lặp, parser, tiền bạc, bảo mật) bắt buộc kèm 1 test nhỏ hoặc assert self-check.
+- **Đánh đổi có kiểm soát**: Nếu cố tình cắt góc để ra mắt nhanh, ghi chú: `// shortcut: [giới hạn hiện tại], [khi nào cần nâng cấp]` (chấp nhận cả `// ponytail:` cũ).
+- **Phản hồi 1 đọc là hiểu**: Kết thúc phản hồi bằng 1-2 dòng nêu rõ những gì đã bỏ qua và rủi ro người dùng cần biết.
 
 ---
 

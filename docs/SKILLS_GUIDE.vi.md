@@ -132,10 +132,22 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 *   **`cro-expert-kit`**: Tối ưu hóa tỷ lệ chuyển đổi (CRO).
 *   **`ui-ux-pro-max-skill`**: Thiết kế giao diện Visuals Premium.
 
-### 🦸 Bộ Siêu Kỹ Năng Agentic (Superpowers Skills Suite - Jesse Vincent / Obra) *(Mới)*
+### ⚡ Bộ Kỹ Năng Tối Giản Senior (Ponytail Suite - Dietrich Gebert) *(v5.3)*
+*   **`ponytail`**: Chế độ Lazy Senior Dev — giải pháp ngắn nhất, đơn giản nhất, ít code nhất giải quyết trọn vẹn bài toán (YAGNI).
+*   **`ponytail-review`**: Review chất lượng mã nguồn chuyên sâu: phát hiện lỗi, bảo mật, tải thực tế, test thiếu, tốc độ và code thừa.
+*   **`ponytail-audit`**: Đánh giá toàn diện toàn bộ repository theo thứ tự ưu tiên: đúng, an toàn, chịu tải, có test, nhanh và tinh gọn.
+*   **`ponytail-debt`**: Thu hoạch tất cả ghi chú `shortcut:` và `ponytail:` thành sổ nợ kỹ thuật (debt ledger) tránh nợ đọng vĩnh viễn.
+*   **`ponytail-gain`**: Bảng tổng kết hiệu quả đo lường thực tế từ benchmark: -53% code, -41% thời gian, -26% chi phí, -45% token.
+*   **`ponytail-help`**: Thẻ tra cứu nhanh các cấp độ (`lite`, `full`, `ultra`) và lệnh điều khiển Ponytail.
+
+### 🦸 Bộ Siêu Kỹ Năng Agentic (Superpowers Skills Suite - Jesse Vincent / Obra) *(v7.0.1)*
 *   **`using-superpowers`**: Kích hoạt nguyên tắc vận hành Superpowers, tìm và nạp skill trước mọi phản hồi.
+*   **`brainstorming`**: Khám phá sâu bài toán thực tế, làm rõ ý định trước khi code, tạo design document & builder check.
+*   **`writing-plans`**: Lập kế hoạch triển khai chi tiết cho kỹ sư chưa từng thấy codebase, chuẩn TDD/YAGNI.
 *   **`executing-plans`**: Thực thi tuần tự kế hoạch (Plan) trực tiếp liên tục, quyết đoán và không ngắt quãng (Inline continuous execution).
+*   **`subagent-driven-development`**: Thực thi plan bóc tách tác vụ cho các subagent độc lập kèm review chéo liên tục.
 *   **`dispatching-parallel-agents`**: Phân chia các tác vụ độc lập chạy song song với ngữ cảnh cô lập (Isolated context).
+*   **`systematic-debugging`**: Điều tra lỗi bài bản 4 giai đoạn, tìm root cause trước khi chạm vào code.
 *   **`verification-before-completion`**: Thiết lập kỷ luật thép "Bằng chứng trước khi nghiệm thu" — bắt buộc chạy lệnh verify trực tiếp trước khi báo hoàn thành.
 *   **`test-driven-development`**: Chu trình TDD chuẩn (RED - GREEN - REFACTOR) bắt buộc thấy test fail trước khi viết code.
 *   **`requesting-code-review`**: Tự động điều phối reviewer độc lập kiểm tra spec compliance và code quality trước khi merge.

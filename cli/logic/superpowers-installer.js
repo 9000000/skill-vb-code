@@ -1,6 +1,6 @@
 /**
  * Superpowers Installer & Manager
- * Manages original Superpowers skills (v6.4.2) from https://github.com/9000000/superpowers.git
+ * Manages original Superpowers skills (v7.0.1) from https://github.com/9000000/superpowers.git
  * Installs skills scoped to individual projects (Antigravity IDE workspace standard)
  * and cleans up global duplicates to prevent Token Budget Exceeded.
  */
